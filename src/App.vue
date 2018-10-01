@@ -19,19 +19,19 @@
 </template>
 
 <script>
-import GlobalNav from "@/components/header/GlobalNav";
+import GlobalNav from '@/components/header/GlobalNav';
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
-    GlobalNav
-  }
+    GlobalNav,
+  },
 };
 </script>
 
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 </style>

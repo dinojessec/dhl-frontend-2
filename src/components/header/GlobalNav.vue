@@ -1,7 +1,7 @@
 <template>
     <div class="global-nav">
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#">
                     <img src="@/assets/deehwa-logo.jpeg" />
                 </a>
@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: "GlobalNav"
+  name: 'GlobalNav',
 };
 </script>
 
@@ -44,11 +44,10 @@ export default {
 .global-nav {
   .navbar {
     border-bottom: 1px solid;
-
+    background-color: #5052e7;
     img {
       height: 50px;
     }
-
     .nav-item {
       color: #000;
       font-weight: bold;
