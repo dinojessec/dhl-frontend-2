@@ -1,17 +1,17 @@
 <template>
   <div>
 
-    <reg-form-five></reg-form-five>
+    <reg-form-four></reg-form-four>
   </div>
 </template>
 
 <script>
-import RegFormFive from '@/components/student/RegFormFive';
+import RegFormFour from '@/components/student/RegFormFour';
 
 export default {
   name: 'Register',
   components: {
-    RegFormFive,
+    RegFormFour,
   },
 };
 </script>
