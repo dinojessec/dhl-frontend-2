@@ -1,121 +1,144 @@
 <template>
 
     <form>
-        <b-form-group label="Personal Information" label-size="lg" label-class="font-weight-bold pt-0" class="mb-2">
-            <!-- 1strow -->
-            <b-card class="mb-3">
-                <b-row>
-                    <b-form-group label="First Name" class="col-md-4 col-12">
-                        <b-form-input type="text" id="inputFirstName" placeholder="First Name" v-model="fields.firstName"></b-form-input>
-                    </b-form-group>
-                    <b-form-group label="Middle Name" class="col-md-4 col-12">
-                        <b-form-input type="text" id="inputMiddleName" placeholder="Middle Name" v-model="fields.middleName"></b-form-input>
-                    </b-form-group>
-                    <b-form-group label="Last Name" class="col-md-4 col-12">
-                        <b-form-input type="text" id="inputLastName" placeholder="Last Name" v-model="fields.lastName"></b-form-input>
-                    </b-form-group>
-                </b-row>
-            </b-card>
-            <!-- 2ndrow -->
-            <b-card class="mb-3">
-                <b-form-group label="Log-in Details" label-size="lg">
-                    <b-row>
-                        <b-form-group label="Username" class="col-md-6 col-12">
-                            <b-form-input type="text" id="inputUsername" placeholder="Username" v-model="fields.username"></b-form-input>
-                        </b-form-group>
-                        <b-form-group label="Password" class="col-md-6 col-12">
-                            <b-form-input type="password" id="inputPassword" placeholder="Password" v-model="fields.password"></b-form-input>
-                        </b-form-group>
-                    </b-row>
-                </b-form-group>
-            </b-card>
-            <!-- 3rd -->
-            <b-card class="mb-3">
-                <b-form-group label="Competency" label-size="lg">
-                    <div class="form-row">
-                        <b-form-group label="Alternative Learning System(ALS) passer?" label-size="sm" class="col-md-4 col-12 mb-2" label-class="font-weight-bold pt-0" >
-                            <b-form-select id="als" v-model="fields.ALS">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </b-form-select>
-                        </b-form-group>
-                        <b-form-group label="PhilippineEducational Placement Test(PEPT) passer?" label-size="sm" class="col-md-5 col-12" label-class="font-weight-bold pt-0">
-                            <b-form-select id="pept" v-model="fields.PEPT">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </b-form-select>
-                        </b-form-group>
-                        <b-form-group label="National Certificate(NC) holder?" label-size="sm" class="col-md-3 col-12" label-class="font-weight-bold pt-0" >
-                            <b-form-select id="nc" v-model="fields.NC">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </b-form-select>
-                        </b-form-group>
+        <h4 class="mb-3"><strong>Personal Information</strong></h4>
+        <!-- 1strow -->
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputFirstName">First Name</label>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="input First Name" v-model="fields.firstName">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputMiddleName">Middle Name</label>
+                <input type="text" class="form-control" id="inputMiddleName" placeholder="Please input Complete Middle Name" v-model="fields.middleName">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="input Last Name" v-model="fields.lastName">
+            </div>
+        </div>
+        <!-- 2ndrow -->
+        <div class="card mb-2">
+            <div class="card-header">Username will be the combination of your lastname and firstname</div>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputUsername">Username</label>
+                        <input type="text" class="form-control" id="inputUsername" disabled v-model="fields.username">
                     </div>
-                </b-form-group>
-            </b-card>
-            <!-- 3rd row -->
-            <b-card class="mb-3">
-                <b-input-group>
-                    <b-form-group label="LRN:" label-class="text-sm-right" label-for="lrn" class="col-md-4 col-12">
-                        <b-form-input id="lrn"  v-model="fields.LRN"></b-form-input>
-                    </b-form-group>
-                    <b-form-group label="Grade Level:" label-class="text-sm-right" label-for="gradeLevel" class="col-md-4 col-12" >
-                        <b-form-select  :options="level" id="gradeLevel" class="mb-1 " v-model="fields.gradeLevel"/>
-                        <div>Selected:
-                            <strong>{{ grade }}</strong>
-                        </div>
-                    </b-form-group>
-                    <b-form-group label="Strand:" label-class="text-sm-right" label-for="strand" class="col-md-4 col-12" >
-                        <b-form-select :options="track" class="mb-1" id="strand" v-model="fields.strand"/>
-                        <div>Selected:
-                            <strong>{{ strand }}</strong>
-                        </div>
-                    </b-form-group>
-                </b-input-group>
-            </b-card>
-            <!-- 4throw -->
-            <b-card class="mb-3">
-                <b-input-group>
-                    <b-form-group row label="Date of Birth:" label-class="text-sm-right" label-for="birthday" class="col-md-4 xs-12" >
-                        <b-form-input id="birthday" type="date" v-model="fields.birthday"></b-form-input>
-                    </b-form-group>
-                    <b-form-group row label="Place of Birth:" label-class="text-sm-right" label-for="placeOfBirth" class="col-md-4 xs-12" >
-                        <b-form-input id="placeOfBirth" v-model="fields.placeOfBirth"></b-form-input>
-                    </b-form-group>
-                    <b-form-group row label="Sex:" label-class="text-sm-right" label-for="sex" class="col-md-4 xs-12" >
-                        <b-form-select :options="['Male', 'Female']" class="mb-3 " id="sex" v-model="fields.sex"/>
-                    </b-form-group>
-                </b-input-group>
-            </b-card>
-            <!-- 6th row -->
-            <b-card class="mb-3">
-                <b-input-group>
-                    <b-form-group row label="Mobile Number:" label-class="text-sm-right" label-for="mobileNumber" class="col-md-4 xs-12" >
-                        <b-form-input id="mobileNumber" v-model="fields.mobileNumber"></b-form-input>
-                    </b-form-group>
-                    <b-form-group row label="Landline Number:" label-class="text-sm-right" label-for="landlineNumber" class="col-md-4 xs-12" >
-                        <b-form-input id="landlineNumber" v-model="fields.landlineNumber"></b-form-input>
-                    </b-form-group>
-                    <b-form-group row label="Guardian:" label-class="text-sm-right" label-for="guardian" class="col-md-4 xs-12" >
-                        <b-form-input id="guardian" v-model="fields.guardian"></b-form-input>
-                    </b-form-group>
-                </b-input-group>
-            </b-card>
-            <b-card class="mb-3">
-                <b-input-group>
-                    <b-form-group row label="Mother Tongue:" label-class="text-sm-right" label-for="motherTongue" class="col-md-4 col-12" >
-                        <b-form-input id="motherTongue" v-model="fields.motherTongue"></b-form-input>
-                    </b-form-group>
-                    <b-form-group row label="Religion:" label-class="text-sm-right" label-for="religion" class="col-md-4 col-12">
-                        <b-form-input id="religion"  v-model="fields.religion"></b-form-input>
-                    </b-form-group>
-                    <b-form-group label="Ethnic Group:" label-class="text-sm-right" label-for="ethnic" class="col-md-4 col-12" >
-                        <b-form-select  :options="group" class="mb-1" id="ethnic" v-model="fields.ethnicGroup"/>
-                    </b-form-group>
-                </b-input-group>
-            </b-card>
-        </b-form-group>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Input password for your Username" v-model="fields.password">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3rd -->
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="ALS">Alternative Learning System(ALS) passer</label>
+                <select id="ALS" class="form-control" v-model="fields.ALS">
+                    <option selected disabled>Indicate if you passed ALS test</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="PEPT">Philippine Educational Placement Test(PEPT) passer</label>
+                <select id="PEPT" class="form-control" v-model="fields.PEPT">
+                    <option selected disabled>Indicate if you passed PEPT test</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="NC">National Certificate(NC) holder</label>
+                <select id="NC" class="form-control" v-model="fields.NC">
+                    <option selected disabled>Indicate if you passed NC test</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+        <!-- 4th row -->
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputLRN">LRN</label>
+                <input type="number" class="form-control" id="inputLRN" placeholder="e.g. 12345678901" v-model="fields.LRN">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="gradeLevel">Grade Level</label>
+                <select id="gradeLevel" class="form-control" v-model="fields.gradeLevel">
+                    <option selected disabled>Select grade level</option>
+                    <option value="Grade11">Grade 11</option>
+                    <option value="Grade12">Grade 12</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="strand">Strand</label>
+                <select id="strand" class="form-control" v-model="fields.strand">
+                    <option selected disabled>Select your strand</option>
+                    <option value="STEM">STEM</option>
+                    <option value="IT">Information Technology</option>
+                </select>
+            </div>
+        </div>
+        <!-- 5throw -->
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputBirthday">Birthday</label>
+                <input type="date" class="form-control" id="inputBirthday" v-model="fields.birthday">
+
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputPlaceOfBirth">Place of Birth</label>
+                <input type="text" class="form-control" id="inputPlaceOfBirth" v-model="fields.placeOfBirth">
+
+            </div>
+            <div class="form-group col-md-4">
+                <label for="sex">Sex</label>
+                <select id="sex" class="form-control" v-model="fields.sex">
+                    <option selected disabled>Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+            </div>
+        </div>
+        <!-- 6th row -->
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputMobileNumber">Mobile Number</label>
+                <input type="number" class="form-control" id="inputMobileNumber" placeholder="e.g. 09-00-000-0000" v-model="fields.mobileNumber">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputLandlineNumber">Landline Number</label>
+                <input type="number" class="form-control" id="inputLandlineNumber" placeholder="e.g. 000-0000" v-model="fields.landlineNumber">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputGuardian">Guardian</label>
+                <input type="text" class="form-control" id="inputGuardian" placeholder="Point of Contact" v-model="fields.guardian">
+            </div>
+        </div>
+        <!-- 7th row -->
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputMotherTongue">Mother Tongue</label>
+                <input type="text" class="form-control" id="inputMotherTongue" v-model="fields.motherTongue">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputReligion">Religion</label>
+                <input type="text" class="form-control" id="inputReligion" v-model="fields.religion">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="ethnicGroup">Ethnic Group</label>
+                <select id="ethnicGroup" class="form-control" v-model="fields.ethnicGroup">
+                    <option selected disabled>Select Ethnic group</option>
+                    <option value="N.A.">N.A.</option>
+                    <option value="Mangyan">Mangyan</option>
+                </select>
+            </div>
+        </div>
     </form>
 
 </template>
@@ -149,24 +172,6 @@ export default {
   name: 'RegFormOne',
   data() {
     return {
-      grade: null,
-      level: [
-        { value: null, text: 'Please select Grade Level' },
-        { value: 'Grade 11', text: 'Grade 11' },
-        { value: 'Grade 12', text: 'Grade 12' },
-      ],
-      strand: null,
-      track: [
-        { value: null, text: 'Please Choose your Strand' },
-        { value: 'STEM', text: 'Stem' },
-        { value: 'option2', text: 'option2' },
-      ],
-      ethnic: null,
-      group: [
-        { value: null, text: 'Please Choose your Ethnic Group' },
-        { value: 'Negrito Groups', text: 'Negrito Groups' },
-        { value: 'Mangyan', text: 'Mangyan' },
-      ],
       fields,
     };
   },

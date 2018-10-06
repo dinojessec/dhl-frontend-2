@@ -1,91 +1,100 @@
 <template>
     <form>
-        <div class="form-group">
-            <b-form-group label="Address" label-size="lg" label-class="font-weight-bold pt-0" class="mb-2">
-                <b-card class="mb-3">
-                    <!-- student address -->
-                    <b-form-group label="Present Address" label-size="lg" label-class="font-weight-bold pt-0" class="mb-0">
-                        <b-input-group>
-                            <b-form-group row label="House Number:" label-class="text-sm-right" label-for="houseNumber" class="col-md-3 xs-12">
-                                <b-form-input id="houseNumber"></b-form-input>
-                            </b-form-group>
-                            <b-form-group row label="Street Name:" label-class="text-sm-right" label-for="streetName" class="col-md-5 xs-12">
-                                <b-form-input id="streetName"></b-form-input>
-                            </b-form-group>
-                            <b-form-group row label="Barangay:" label-class="text-sm-right" label-for="barangay" class="col-md-4 xs-12">
-                                <b-form-input id="barangay"></b-form-input>
-                            </b-form-group>
-                        </b-input-group>
-                    </b-form-group>
-                    <b-input-group>
-                        <b-form-group row label="Town:" label-class="text-sm-right" label-for="town" class="col-md-6 xs-12">
-                            <b-form-input id="town"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="City:" label-class="text-sm-right" label-for="city" class="col-md-6 xs-12">
-                            <b-form-input id="city"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
-                </b-card>
-                <!-- fatheraddress -->
-                <b-card class="mb-3">
-                    <b-form-group label="Father Address" label-size="lg" label-class="font-weight-bold pt-0" class="mb-0">
-                        <b-form-checkbox id="checkbox1" value="accepted" unchecked-value="not_accepted" class="mb-2">
-                            Address same as above.
-                        </b-form-checkbox>
-                        <b-input-group>
-                            <b-form-group row label="House Number:" label-class="text-sm-right" label-for="fatherHouseNumber" class="col-md-3 xs-12">
-                                <b-form-input id="fatherHouseNumber"></b-form-input>
-                            </b-form-group>
-                            <b-form-group row label="Street Name:" label-class="text-sm-right" label-for="fatherStreetName" class="col-md-5 xs-12">
-                                <b-form-input id="fatherStreetName"></b-form-input>
-                            </b-form-group>
-                            <b-form-group row label="Barangay:" label-class="text-sm-right" label-for="fatherBarangay" class="col-md-4 xs-12">
-                                <b-form-input id="fatherBarangay"></b-form-input>
-                            </b-form-group>
-                        </b-input-group>
-                    </b-form-group>
-                    <b-input-group>
-                        <b-form-group row label="Town:" label-class="text-sm-right" label-for="fatherTown" class="col-md-6 xs-12">
-                            <b-form-input id="fatherTown"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="City:" label-class="text-sm-right" label-for="fatherCity" class="col-md-6 xs-12">
-                            <b-form-input id="fatherCity"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
-                </b-card>
-                <!-- motheraddress -->
-                <b-card class="mb-3">
-                    <b-form-group label="Mother Address" label-size="lg" label-class="font-weight-bold pt-0" class="mb-0">
-                        <b-form-checkbox id="checkbox2" value="accepted" unchecked-value="not_accepted" class="mb-2">
-                            Address same as above.
-                        </b-form-checkbox>
-                        <b-input-group>
-                            <b-form-group row label="House Number:" label-class="text-sm-right" label-for="motherHouseNumber" class="col-md-3 xs-12">
-                                <b-form-input id="motherHouseNumber"></b-form-input>
-                            </b-form-group>
-                            <b-form-group row label="Street Name:" label-class="text-sm-right" label-for="motherStreetName" class="col-md-5 xs-12">
-                                <b-form-input id="motherStreetName"></b-form-input>
-                            </b-form-group>
-                            <b-form-group row label="Barangay:" label-class="text-sm-right" label-for="motherBarangay" class="col-md-4 xs-12">
-                                <b-form-input id="motherBarangay"></b-form-input>
-                            </b-form-group>
-                        </b-input-group>
-                    </b-form-group>
-                    <b-input-group>
-                        <b-form-group row label="Town:" label-class="text-sm-right" label-for="motherTown" class="col-md-6 xs-12">
-                            <b-form-input id="motherTown"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="City:" label-class="text-sm-right" label-for="motherCity" class="col-md-6 xs-12">
-                            <b-form-input id="motherCity"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
-
-                </b-card>
-            </b-form-group>
+        <h4 class="mb-3"><strong>Home Address</strong></h4>
+        <div class="form-group mb-3">
+            <h5><i>Present Address</i></h5>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="houseNumber">House Number</label>
+                    <input type="text" class="form-control" id="houseNumber" placeholder="1610">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="streetName">Street Name</label>
+                    <input type="text" class="form-control" id="streetName" placeholder="Marcos Highway">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="barangay">Barangay</label>
+                    <input type="text" class="form-control" id="barangay" placeholder="Santolan">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="town">Town</label>
+                    <input type="text" class="form-control" id="town" placeholder="Sta. Maria Compound">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="Pasig City">
+                </div>
+            </div>
         </div>
-
+        <!-- fatheraddress -->
+        <div class="form-group mb-3">
+            <h5><i>Father Address</i></h5>
+            <!-- checkbox -->
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="fatherSameAddress">
+                <label class="custom-control-label" for="fatherSameAddress">Same Address Above</label>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="fatherHouseNumber">House Number</label>
+                    <input type="text" class="form-control" id="fatherHouseNumber" placeholder="1610">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="fatherStreetName">Street Name</label>
+                    <input type="text" class="form-control" id="fatherStreetName" placeholder="Marcos Highway">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fatherBarangay">Barangay</label>
+                    <input type="text" class="form-control" id="fatherBarangay" placeholder="Santolan">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fatherTown">Town</label>
+                    <input type="text" class="form-control" id="fatherTown" placeholder="Sta. Maria Compound">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fatherCity">City</label>
+                    <input type="text" class="form-control" id="fatherCity" placeholder="Pasig City">
+                </div>
+            </div>
+        </div>
+        <!-- motheraddress -->
+        <div class="form-group mb-3">
+            <h5><i>Mother Address</i></h5>
+            <!-- checkbox -->
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="motherSameAddress">
+                <label class="custom-control-label" for="motherSameAddress">Same Address Above</label>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="motherHouseNumber">House Number</label>
+                    <input type="text" class="form-control" id="motherHouseNumber" placeholder="1610">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="motherStreetName">Street Name</label>
+                    <input type="text" class="form-control" id="motherStreetName" placeholder="Marcos Highway">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="motherBarangay">Barangay</label>
+                    <input type="text" class="form-control" id="motherBarangay" placeholder="Santolan">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="motherTown">Town</label>
+                    <input type="text" class="form-control" id="motherTown" placeholder="Sta. Maria Compound">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="motherCity">City</label>
+                    <input type="text" class="form-control" id="motherCity" placeholder="Pasig City">
+                </div>
+            </div>
+        </div>
     </form>
-
 </template>
 
 <script>

@@ -1,90 +1,100 @@
 <template>
 
     <form>
+        <h4 class="mb-3"><strong>Parent Information</strong></h4>
+        <h5><i>Father Information</i></h5>
         <div class="form-group">
-            <b-form-group label="Parents Information" label-size="lg" label-class="font-weight-bold pt-0" class="mb-2">
-                <!-- 1st line -->
-                <b-card class="mb-3">
-                    <b-form-group label="Father Information" label-size="lg" label-class="font-weight-bold pt-0" class="mb-2">
-                        <b-input-group>
-                            <b-form-group row label="Father Name:" label-class="text-sm-right" label-for="fatherName" class="col-md-6 xs-12">
-                                <b-form-input id="fatherName"></b-form-input>
-                            </b-form-group>
-                        </b-input-group>
-                    </b-form-group>
-                    <b-input-group>
-                        <b-form-group row label="Occupation:" label-class="text-sm-right" label-for="fatherOccupation" class="col-md-4 xs-12">
-                            <b-form-input id="fatherOccupation"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="Employer:" label-class="text-sm-right" label-for="fatherEmployer" class="col-md-4 xs-12">
-                            <b-form-input id="fatherEmployer"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="Employer Address:" label-class="text-sm-right" label-for="fatherEmployerAddress" class="col-md-4 xs-12">
-                            <b-form-input id="fatherEmployerAddress"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
-                    <b-input-group>
-                        <b-form-group row label="Highest Educational Attainment:" label-class="text-sm-right" label-for="fatherEducAttainment" class="col-md-4 xs-12">
-                            <b-form-input id="fatherEducAttainment"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="School Graduated:" label-class="text-sm-right" label-for="fatherSchoolGraduated" class="col-md-4 xs-12">
-                            <b-form-input id="fatherSchoolGraduated"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="Religion:" label-class="text-sm-right" label-for="fatherReligion" class="col-md-4 xs-12">
-                            <b-form-input id="fatherReligion"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
-                    <b-input-group>
-                        <b-form-group row label="Mobile Number:" label-class="text-sm-right" label-for="fatherMobileNumber" class="col-md-6 xs-12">
-                            <b-form-input id="fatherMobileNumber"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="Landline Number:" label-class="text-sm-right" label-for="fatherLandlineNumber" class="col-md-6 xs-12">
-                            <b-form-input id="fatherLandlineNumber"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
-                </b-card>
-                <!-- mother -->
-                <b-card class="mb-3">
-                    <b-form-group label="Mother Information" label-size="lg" label-class="font-weight-bold pt-0" class="mb-2">
-                        <b-input-group>
-                            <b-form-group row label="Mother Name:" label-class="text-sm-right" label-for="motherName" class="col-md-6 xs-12">
-                                <b-form-input id="motherName"></b-form-input>
-                            </b-form-group>
-                        </b-input-group>
-                    </b-form-group>
-                    <b-input-group>
-                        <b-form-group row label="Occupation:" label-class="text-sm-right" label-for="motherOccupation" class="col-md-4 xs-12">
-                            <b-form-input id="motherOccupation"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="Employer:" label-class="text-sm-right" label-for="motherEmployer" class="col-md-4 xs-12">
-                            <b-form-input id="motherEmployer"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="Employer Address:" label-class="text-sm-right" label-for="motherEmployerAddress" class="col-md-4 xs-12">
-                            <b-form-input id="motherEmployerAddress"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
-                    <b-input-group>
-                        <b-form-group row label="Highest Educational Attainment:" label-class="text-sm-right" label-for="motherEducAttainment" class="col-md-4 xs-12">
-                            <b-form-input id="motherEducAttainment"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="School Graduated:" label-class="text-sm-right" label-for="motherSchoolGraduated" class="col-md-4 xs-12">
-                            <b-form-input id="motherSchoolGraduated"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="Religion:" label-class="text-sm-right" label-for="motherReligion" class="col-md-4 xs-12">
-                            <b-form-input id="motherReligion"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
-                    <b-input-group>
-                        <b-form-group row label="Mobile Number:" label-class="text-sm-right" label-for="motherMobileNumber" class="col-md-6 xs-12">
-                            <b-form-input id="motherMobileNumber"></b-form-input>
-                        </b-form-group>
-                        <b-form-group row label="Landline Number:" label-class="text-sm-right" label-for="motherLandlineNumber" class="col-md-6 xs-12">
-                            <b-form-input id="motherLandlineNumber"></b-form-input>
-                        </b-form-group>
-                    </b-input-group>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fatherName">Father Name</label>
+                    <input type="text" class="form-control" id="fatherName">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="fatherOccupation">Occupation</label>
+                    <input type="text" class="form-control" id="fatherOccupation" placeholder="Job or Profession">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fatherEmployer">Employer</label>
+                    <input type="text" class="form-control" id="fatherEmployer" placeholder="Company Name">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fatherEmployerAddress">Employer Address</label>
+                    <input type="text" class="form-control" id="fatherEmployerAddress" placeholder="Company Address">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="fatherEducationalAttainment">Highest Educational Attainment</label>
+                    <input type="text" class="form-control" id="fatherEducationalAttainment">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fatherSchoolGraduated">School Graduated</label>
+                    <input type="text" class="form-control" id="fatherSchoolGraduated" placeholder="Name of School">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fatherReligion">Religion</label>
+                    <input type="text" class="form-control" id="fatherReligion">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fatherMobileNumber">Mobile Number</label>
+                    <input type="number" class="form-control" id="fatherMobileNumber" placeholder="e.g. 09-00-000-0000">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fatherLandlineNumber">Landline Number</label>
+                    <input type="number" class="form-control" id="fatherLandlineNumber" placeholder="e.g. 000-0000">
+                </div>
+            </div>
+            <!-- mother -->
+            <h5><i>Mother Information</i></h5>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="motherName">Mother Name</label>
+                    <input type="text" class="form-control" id="motherName">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="motherOccupation">Occupation</label>
+                    <input type="text" class="form-control" id="motherOccupation" placeholder="Job or Profession">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="motherEmployer">Employer</label>
+                    <input type="text" class="form-control" id="motherEmployer" placeholder="Company Name">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="motherEmployerAddress">Employer Address</label>
+                    <input type="text" class="form-control" id="motherEmployerAddress" placeholder="Company Address">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="motherEducationalAttainment">Highest Educational Attainment</label>
+                    <input type="text" class="form-control" id="motherEducationalAttainment">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="motherSchoolGraduated">School Graduated</label>
+                    <input type="text" class="form-control" id="motherSchoolGraduated" placeholder="Name of School">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="motherReligion">Religion</label>
+                    <input type="text" class="form-control" id="motherReligion">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="motherMobileNumber">Mobile Number</label>
+                    <input type="number" class="form-control" id="motherMobileNumber" laceholder="e.g. 09-00-000-0000">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="motherLandlineNumber">Landline Number</label>
+                    <input type="number" class="form-control" id="motherLandlineNumber" placeholder="e.g. 000-0000">
+                </div>
+            </div>
 
-                </b-card>
-            </b-form-group>
         </div>
     </form>
 
