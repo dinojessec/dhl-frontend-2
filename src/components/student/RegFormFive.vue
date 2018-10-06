@@ -1,11 +1,13 @@
 <template>
   <form>
     <div class="form-group">
+
       <b-form-group label="Grades from Junior High School" label-size="lg" label-class="font-weight-bold pt-0" class="mb-2">
-        <b-card bg-variant="light">
+        <b-card>
           <b-table striped hover :items="items" :fields="fields"></b-table>
         </b-card>
       </b-form-group>
+
     </div>
   </form>
 </template>

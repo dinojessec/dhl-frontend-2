@@ -82,7 +82,7 @@
                             <b-form-input id="motherLandlineNumber"></b-form-input>
                         </b-form-group>
                     </b-input-group>
-                    <button type="submit" class="btn btn-primary float-right">Next</button>
+
                 </b-card>
             </b-form-group>
         </div>

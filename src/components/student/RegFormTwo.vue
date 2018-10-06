@@ -79,7 +79,6 @@
                             <b-form-input id="motherCity"></b-form-input>
                         </b-form-group>
                     </b-input-group>
-                    <button type="submit" class="btn btn-primary float-right">Next</button>
 
                 </b-card>
             </b-form-group>

@@ -1,41 +1,46 @@
 <template>
-    <b-container fluid>
-        <!-- User Interface controls -->
-        <b-card>
-            <b-row>
-                <b-col md="6" class="my-2">
-                    <b-form-group horizontal label="Search:" class="mb-0">
-                        <b-input-group>
-                            <b-form-input v-model="filter" placeholder="Type Student Name" />
-                            <b-input-group-append>
-                                <b-btn :disabled="!filter" @click="filter = ''">Clear</b-btn>
-                            </b-input-group-append>
-                        </b-input-group>
-                    </b-form-group>
-                </b-col>
-                <!-- per page view -->
-                <b-col md="6" class="my-2">
-                    <b-form-group horizontal label="Per page" class="mb-0">
-                        <b-form-select :options="pageOptions" v-model="perPage" />
-                    </b-form-group>
-                </b-col>
-            </b-row>
-        </b-card>
-        <!-- Main table element -->
-        <b-card>
-            <b-table show-empty stacked="md" :items="items" :fields="fields" :current-page="currentPage" :per-page="perPage" :filter="filter" :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :sort-direction="sortDirection" @filtered="onFiltered">
-                <template slot="name" slot-scope="row">{{row.value.first}} {{row.value.last}}</template>
-                <template slot="isActive" slot-scope="row">{{row.value?'Yes :)':'No :('}}</template>
-            </b-table>
-            <!-- pagination -->
-            <b-row>
-                <b-col md="6" class="my-2">
-                    <b-pagination :total-rows="totalRows" :per-page="perPage" v-model="currentPage" class="my-0" />
-                </b-col>
-            </b-row>
-        </b-card>
+  <b-container fluid title="Student List">
+    <!-- User Interface controls -->
+    <b-card>
+      <b-row>
+        <b-col md="6" class="my-2">
+          <b-form-group horizontal label="Search By:" class="mb-0">
+            <b-input-group>
+              <b-form-input v-model="filter" placeholder="Search Student" />
+              <b-dropdown text="Search by " slot="append">
+                <b-dropdown-item>Name</b-dropdown-item>
+                <b-dropdown-item>Age</b-dropdown-item>
+                <b-dropdown-item>Strand</b-dropdown-item>
+              </b-dropdown>
+              <b-input-group-append>
+                <b-btn :disabled="!filter" @click="filter = ''">Clear</b-btn>
+              </b-input-group-append>
+            </b-input-group>
+          </b-form-group>
+        </b-col>
+        <!-- per page view -->
+        <b-col md="6" class="my-2">
+          <b-form-group horizontal label="Per page" class="mb-0">
+            <b-form-select :options="pageOptions" v-model="perPage" />
+          </b-form-group>
+        </b-col>
+      </b-row>
+    </b-card>
+    <!-- Main table element -->
+    <b-card>
+      <b-table responsive show-empty stacked="md" :items="items" :fields="fields" :current-page="currentPage" :per-page="perPage" :filter="filter" @filtered="onFiltered">
+        <template slot="name" slot-scope="row">{{row.value.first}} {{row.value.last}}</template>
+        <template slot="isActive" slot-scope="row">{{row.value?'Yes :)':'No :('}}</template>
+      </b-table>
+      <!-- pagination -->
+      <b-row>
+        <b-col md="6" class="my-2">
+          <b-pagination :total-rows="totalRows" :per-page="perPage" v-model="currentPage" class="my-0" />
+        </b-col>
+      </b-row>
+    </b-card>
 
-    </b-container>
+  </b-container>
 </template>
 
 <script>
@@ -133,6 +138,12 @@ export default {
           class: 'text-center',
         },
         {
+          key: 'strand',
+          label: 'Strand',
+          sortable: true,
+          class: 'text-center',
+        },
+        {
           key: 'status',
           label: 'Status',
           sortable: true,
@@ -150,8 +161,6 @@ export default {
       totalRows: items.length,
       pageOptions: [5, 10, 15],
       sortBy: null,
-      //   sortDesc: false,
-      //   sortDirection: 'asc',
       filter: null,
       modalInfo: { title: '', content: '' },
     };

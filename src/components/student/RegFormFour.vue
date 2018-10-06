@@ -71,7 +71,6 @@
                         </select>
                     </div>
                 </b-card>
-                <button type="submit" class="btn btn-primary float-right">Next</button>
 
             </b-form-group>
         </div>

@@ -28,5 +28,17 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "register" */ './views/Register.vue'),
     },
+    {
+      path: '/student/profile',
+      name: 'profile',
+      component: () =>
+        import(/* webpackChunkName: "register" */ './views/Profile.vue'),
+    },
+    {
+      path: '/admin/students',
+      name: 'studentList',
+      component: () =>
+        import(/* webpackChunkName: "register" */ './views/StudentList.vue'),
+    },
   ],
 });
