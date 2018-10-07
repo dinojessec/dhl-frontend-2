@@ -139,6 +139,28 @@
                 </select>
             </div>
         </div>
+        <!-- 8th row -->
+        <label for="socialMedia">Social Media Accounts</label>
+        <div class="form-row" id="socialMedia">
+            <div class="input-group mb-3 col-md-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">Facebook</span>
+                </div>
+                <input type="text" class="form-control" id="facebook" aria-describedby="basic-addon3" v-model="fields.facebook">
+            </div>
+            <div class="input-group mb-3 col-md-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">Instagram</span>
+                </div>
+                <input type="text" class="form-control" id="instagram" aria-describedby="basic-addon3" v-model="fields.intagram">
+            </div>
+            <div class="input-group mb-3 col-md-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">Email</span>
+                </div>
+                <input type="text" class="form-control" id="email" aria-describedby="basic-addon3" v-model="fields.email">
+            </div>
+        </div>
     </form>
 
 </template>
@@ -166,6 +188,9 @@ const fields = {
   motherTongue: '',
   religion: '',
   ethnicGroup: '',
+  facebook: '',
+  instagram: '',
+  email: '',
 };
 
 export default {
