@@ -2,12 +2,48 @@
   <form>
     <div class="form-group">
 
-      <b-form-group label="Grades from Junior High School" label-size="lg" label-class="font-weight-bold pt-0" class="mb-2">
-        <b-card>
-          <b-table striped hover :items="items" :fields="fields"></b-table>
-        </b-card>
-      </b-form-group>
+      <div class="table-responsive">
+        <table class="table">
+          <caption>Junior High School Grades</caption>
+          <thead>
+            <tr>
+              <th scope="col">Subject</th>
+              <th scope="col">1st</th>
+              <th scope="col">2nd</th>
+              <th scope="col">3rd</th>
+              <th scope="col">4th</th>
+              <th scope="col">final</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">English</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Math</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Filipino</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+          </tbody>
 
+        </table>
+      </div>
     </div>
   </form>
 </template>
@@ -16,47 +52,13 @@
 export default {
   name: 'RegFormFive',
   data() {
-    return {
-      // Note 'isActive' is left out and will not appear in the rendered table
-      fields: ['Subject', 'First', 'Second', 'Third', 'Fourth', 'Final'],
-      items: [
-        {
-          Subject: 1,
-          First: 40,
-          Second: 'Dickerson',
-          Third: 'Macdonald',
-          Fourth: 'text',
-          Final: 'sample',
-        },
-        {
-          Subject: 2,
-          First: 21,
-          Second: 'Larsen',
-          Third: 'Shaw',
-          Fourth: 'test',
-          Final: 'sfasdf',
-        },
-        {
-          Subject: 3,
-          First: 89,
-          Second: 'Geneva',
-          Third: 'Wilson',
-          Fourth: 'tests',
-          Final: 'sdfasdf',
-        },
-        {
-          Subject: 4,
-          First: 38,
-          Second: 'Jami',
-          Third: 'Carney',
-          Fourth: 'tset',
-          Final: 'gasdg',
-        },
-      ],
-    };
+    return {};
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.inputGrade {
+  width: 100px;
+}
 </style>

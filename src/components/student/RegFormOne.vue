@@ -3,61 +3,66 @@
     <form>
         <h4 class="mb-3"><strong>Personal Information</strong></h4>
         <!-- 1strow -->
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="inputFirstName">First Name</label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="input First Name" v-model="fields.firstName">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputMiddleName">Middle Name</label>
-                <input type="text" class="form-control" id="inputMiddleName" placeholder="Please input Complete Middle Name" v-model="fields.middleName">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputLastName">Last Name</label>
-                <input type="text" class="form-control" id="inputLastName" placeholder="input Last Name" v-model="fields.lastName">
+        <div class="form-group mb-3">
+            <h5><i>Input your Name</i></h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="input First Name" v-model="fields.firstName">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputMiddleName">Middle Name</label>
+                    <input type="text" class="form-control" id="inputMiddleName" placeholder="Please input Complete Middle Name" v-model="fields.middleName">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" placeholder="input Last Name" v-model="fields.lastName">
+                </div>
             </div>
         </div>
         <!-- 2ndrow -->
-        <div class="card mb-2">
-            <div class="card-header">Username will be the combination of your lastname and firstname</div>
-            <div class="card-body">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputUsername">Username</label>
-                        <input type="text" class="form-control" id="inputUsername" disabled v-model="fields.username">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Input password for your Username" v-model="fields.password">
-                    </div>
+        <div class="form-group mb-3">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputUsername">Username</label>
+                    <input readonly type="text" class="form-control mb-1" id="inputUsername" v-model="fields.username">
+                    <button type="button" class="form-control btn-primary" @click="generateUser()">Click to Generate Username</button>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Input password for your Username" v-model="fields.password">
                 </div>
             </div>
         </div>
         <!-- 3rd -->
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="ALS">Alternative Learning System(ALS) passer</label>
-                <select id="ALS" class="form-control" v-model="fields.ALS">
-                    <option selected disabled>Indicate if you passed ALS test</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-            <div class="form-group col-md-5">
-                <label for="PEPT">Philippine Educational Placement Test(PEPT) passer</label>
-                <select id="PEPT" class="form-control" v-model="fields.PEPT">
-                    <option selected disabled>Indicate if you passed PEPT test</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="NC">National Certificate(NC) holder</label>
-                <select id="NC" class="form-control" v-model="fields.NC">
-                    <option selected disabled>Indicate if you passed NC test</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+        <div class="form-group mb-3">
+            <h5><i>Competency</i></h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="ALS">Alternative Learning System(ALS) passer</label>
+                    <select id="ALS" class="form-control" v-model="fields.ALS">
+                        <option selected disabled>Indicate if you passed ALS test</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="PEPT">Philippine Educational Placement Test(PEPT) passer</label>
+                    <select id="PEPT" class="form-control" v-model="fields.PEPT">
+                        <option selected disabled>Indicate if you passed PEPT test</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="NC">National Certificate(NC) holder</label>
+                    <select id="NC" class="form-control" v-model="fields.NC">
+                        <option selected disabled>Indicate if you passed NC test</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
             </div>
         </div>
         <!-- 4th row -->
@@ -203,10 +208,15 @@ export default {
   watch: {
     fields: {
       handler(val, oldVal) {
-        console.log(val.password);
+        // console.log(val.password);
         this.$emit('formOneData', val);
       },
       deep: true,
+    },
+  },
+  methods: {
+    generateUser() {
+      this.fields.username = fields.lastName + fields.firstName;
     },
   },
 };

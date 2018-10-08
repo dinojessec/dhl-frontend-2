@@ -2,8 +2,8 @@
   <div>
 
     <reg-form-one v-if="step === 1" @formOneData="handleData"></reg-form-one>
-    <reg-form-two v-if="step === 2"></reg-form-two>
-    <reg-form-three v-if="step === 3"></reg-form-three>
+    <reg-form-two v-if="step === 2" @formTwoData="handleData"></reg-form-two>
+    <reg-form-three v-if="step === 3" @formThreeData="handleData"></reg-form-three>
     <reg-form-four v-if="step === 4"></reg-form-four>
     <reg-form-five v-if="step === 5"></reg-form-five>
 
