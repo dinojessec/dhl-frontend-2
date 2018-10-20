@@ -40,7 +40,7 @@
         <!-- 3rd row -->
         <div class="form-group mb-3">
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-2">
                     <label for="schoolType">School Type</label>
                     <select id="schoolType" class="form-control">
                         <option selected disabled>Select School Type</option>
@@ -48,21 +48,34 @@
                         <option value="Public">Public</option>
                     </select>
                 </div>
-                <div class="form-group col-md-4">
+
+                <div class="form-group col-md-2">
                     <label for="schoolLocation">School Location</label>
-                    <input type="text" class="form-control" id="schoolLocation" placeholder="School Location">
+                    <!-- <input type="text" class="form-control" id="schoolLocation" placeholder="School Location"> -->
+                    <select class="form-control" v-model="fields.city">
+                        <option v-for="city of cities" :key="city">{{ city }}</option>
+                    </select>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-2">
+                    <label for="schoolLocation">Town</label>
+                    <select class="form-control" v-model="fields.city">
+                        <option v-for="city of cities" :key="city">{{ city }}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
                     <label for="voucher">Voucher</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="voucher" placeholder="Input Code" aria-label="Text input with dropdown button">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code Type</button>
-                            <div class="dropdown-menu">
-                                <button class="dropdown-item" type="button">QVA</button>
-                                <button class="dropdown-item" type="button">ESC</button>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="voucherType">Voucher Type</label>
+                    <div class="input-group">
+                        <select class="form-control" id="voucherType">
+                            <option selected disabled>Select Voucher Type</option>
+                            <option value="ESC">ESC</option>
+                            <option value="QVA">QVA</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -113,11 +126,25 @@
 </template>
 
 <script>
-const i = 1;
+var i = 1;
+
+const fields = {
+  city: '',
+};
+
 export default {
+  name: 'RegFormFour',
   data() {
     return {
-      inputs: [{}],
+      fields,
+      inputs: [
+        {
+          i: '',
+          org: '',
+          orgAward: '',
+        },
+      ],
+      cities: ['Rizal', 'Marikina', 'Pasig'],
     };
   },
   methods: {
@@ -127,9 +154,12 @@ export default {
         orgAward: '',
       });
       this.i++;
+      console.log(this.inputs);
     },
     deleteRow() {
       this.inputs.pop();
+      this.i--;
+      console.log(i);
     },
   },
 };

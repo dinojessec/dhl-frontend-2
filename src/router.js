@@ -23,6 +23,11 @@ export default new Router({
         import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
+      path: '/signin',
+      name: 'signIn',
+      component: () => import('./views/SignIn.vue'),
+    },
+    {
       path: '/student/register',
       name: 'register',
       component: () =>
@@ -49,8 +54,17 @@ export default new Router({
     {
       path: '/admin/teacher',
       name: 'teacherList',
-      component: () =>
-        import(/* webpackChunkName: "register" */ './views/TeacherList.vue'),
+      component: () => import('./views/TeacherList.vue'),
+    },
+    {
+      path: '/admin/sectioninfo',
+      name: 'sectionInfo',
+      component: () => import('./components/section/SectionInfo.vue'),
+    },
+    {
+      path: '/admin/registrationform',
+      name: 'registrationForm',
+      component: () => import('./views/RegistrationForm.vue'),
     },
   ],
 });

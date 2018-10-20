@@ -20,13 +20,13 @@
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/student/register">Register</router-link>
+                            <router-link class="nav-link" to="/student/register">Register</router-link>
                             <!-- <a class="nav-link" href="#">Register</a> -->
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sign in</a>
+                            <router-link class="nav-link" to="/signin">Sign In</router-link>
                         </li>
                     </ul>
                 </div>

@@ -69,7 +69,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="inputLRN">LRN</label>
-                <input type="number" class="form-control" id="inputLRN" placeholder="e.g. 12345678901" v-model="fields.LRN">
+                <input type="number" class="form-control" id="inputLRN" placeholder="e.g. 123456789012" v-model="fields.LRN">
             </div>
             <div class="form-group col-md-4">
                 <label for="gradeLevel">Grade Level</label>
@@ -216,7 +216,12 @@ export default {
   },
   methods: {
     generateUser() {
-      this.fields.username = fields.lastName + fields.firstName;
+      //   this.fields.username = fields.lastName + fields.firstName;
+      const middle = `${this.fields.middleName.charAt(0)}`;
+      const username = `${this.fields.lastName}${
+        this.fields.firstName
+      }${middle}`;
+      this.fields.username = username.toLowerCase().replace(/ /g, '');
     },
   },
 };
@@ -227,4 +232,3 @@ export default {
   border: 1px solid black;
 }
 </style>
-

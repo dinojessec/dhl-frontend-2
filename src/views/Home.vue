@@ -1,5 +1,6 @@
 <template>
   <div>
+
   </div>
 </template>
 
@@ -8,5 +9,6 @@
 
 export default {
   name: 'home',
+  components: {},
 };
 </script> 
