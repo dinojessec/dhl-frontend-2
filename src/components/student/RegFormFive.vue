@@ -40,6 +40,70 @@
               <td><input type="number" class="inputGrade form-control"></td>
               <td><input type="number" class="inputGrade form-control"></td>
             </tr>
+            <tr>
+              <th scope="row">Science</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Araling Panlipunan(AP)</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Edukasyon sa Pagpapakatao(EsP)</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Music</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Arts</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Physical Education</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Health</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
+            <tr>
+              <th scope="row">Edukasyon Pantahanan at Pangkabuhayan(EPP)</th>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+              <td><input type="number" class="inputGrade form-control"></td>
+            </tr>
           </tbody>
 
         </table>

@@ -3,13 +3,13 @@
         <form>
             <div class="form-group">
                 <label for="inputUsername">Username</label>
-                <input type="text" class="form-control" id="inputUsername" placeholder="e.g. delacruzjuan">
+                <input type="text" class="form-control" id="inputUsername">
             </div>
             <div class="form-group">
                 <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <input type="password" class="form-control" id="inputPassword">
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group">
                 <label for="signinAs">Sign-in as:</label>
                 <select class="form-control">
                     <option selected disabled>Select User Type</option>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'SignIn',
+    name: 'SignIn',
 };
 </script>
 

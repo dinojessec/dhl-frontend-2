@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import RegFormOne from '@/components/student/RegFormOne';
 import RegFormTwo from '@/components/student/RegFormTwo';
 import RegFormThree from '@/components/student/RegFormThree';
@@ -22,6 +24,9 @@ import RegFormFive from '@/components/student/RegFormFive';
 
 const FIRST_STEP = 1;
 const LAST_STEP = 5;
+
+// @TODO: make this global
+const apiUrl = 'http://localhost:3000/api/v1'
 
 export default {
   name: 'Register',
@@ -44,6 +49,7 @@ export default {
     nextStep() {
       if (this.step <= 4) {
         this.step++;
+        this.storeData(this.data);
       }
     },
 
@@ -53,9 +59,23 @@ export default {
       }
     },
 
+    storeData(student) {
+      localStorage.removeItem('studentData');
+      localStorage.setItem('studentData', JSON.stringify(student));
+    },
+
     saveStudent(student) {
-      console.log('student');
-      console.log(JSON.stringify(student));
+
+      axios.post(`${apiUrl}/students`, {
+        data: student
+      })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+
     },
 
     handleData(val) {

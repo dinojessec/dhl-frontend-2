@@ -105,41 +105,33 @@
 
 <script>
 const fields = {
-  fatherName: '',
-  fatherOccupation: '',
-  fatherEmployer: '',
-  fatherEmployerAddress: '',
-  fatherEducationalAttainment: '',
-  fatherSchoolGraduated: '',
-  fatherReligion: '',
-  fatherMobileNumber: '',
-  fatherLandlineNumber: '',
-  motherName: '',
-  motherOccupation: '',
-  motherEmployer: '',
-  motherEmployerAddress: '',
-  motherEducationalAttainment: '',
-  motherSchoolGraduated: '',
-  motherReligion: '',
-  motherMobileNumber: '',
-  motherLandlineNumber: '',
+    fatherName: '',
+    fatherOccupation: '',
+    fatherReligion: '',
+    fatherMobileNumber: '',
+    fatherLandlineNumber: '',
+    motherName: '',
+    motherOccupation: '',
+    motherReligion: '',
+    motherMobileNumber: '',
+    motherLandlineNumber: '',
 };
 export default {
-  name: 'RegFormThree',
-  data() {
-    return {
-      fields,
-    };
-  },
-  watch: {
-    fields: {
-      handler(val, oldVal) {
-        console.log(val.password);
-        this.$emit('formThreeData', val);
-      },
-      deep: true,
+    name: 'RegFormThree',
+    data() {
+        return {
+            fields,
+        };
     },
-  },
+    watch: {
+        fields: {
+            handler(val, oldVal) {
+                console.log(val.password);
+                this.$emit('formThreeData', val);
+            },
+            deep: true,
+        },
+    },
 };
 </script>
 

@@ -69,7 +69,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="inputLRN">LRN</label>
-                <input type="number" class="form-control" id="inputLRN" placeholder="e.g. 123456789012" v-model="fields.LRN">
+                <input type="number" class="form-control" id="inputLRN" placeholder="e.g. 123456789012" v-model="fields.lrn">
             </div>
             <div class="form-group col-md-4">
                 <label for="gradeLevel">Grade Level</label>
@@ -102,7 +102,7 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="sex">Sex</label>
-                <select id="sex" class="form-control" v-model="fields.sex">
+                <select id="sex" class="form-control" v-model="fields.gender">
                     <option selected disabled>Select gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -157,7 +157,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon3">Instagram</span>
                 </div>
-                <input type="text" class="form-control" id="instagram" aria-describedby="basic-addon3" v-model="fields.intagram">
+                <input type="text" class="form-control" id="instagram" aria-describedby="basic-addon3" v-model="fields.instagram">
             </div>
             <div class="input-group mb-3 col-md-4">
                 <div class="input-group-prepend">
@@ -172,58 +172,68 @@
 
 <script>
 const fields = {
-  name: 'formOne',
-  firstName: '',
-  middleName: '',
-  lastName: '',
-  username: '',
-  password: '',
-  ALS: '',
-  PEPT: '',
-  NC: '',
-  LRN: '',
-  gradeLevel: '',
-  strand: '',
-  birthday: '',
-  placeOfBirth: '',
-  sex: '',
-  mobileNumber: '',
-  landlineNumber: '',
-  guardian: '',
-  motherTongue: '',
-  religion: '',
-  ethnicGroup: '',
-  facebook: '',
-  instagram: '',
-  email: '',
+    name: 'formOne',
+    firstName: '',
+    middleName: '',
+    lastName: '',
+    username: '',
+    password: '',
+    ALS: '',
+    PEPT: '',
+    NC: '',
+    lrn: '',
+    gradeLevel: '',
+    strand: '',
+    birthday: '',
+    placeOfBirth: '',
+    gender: '',
+    mobileNumber: '',
+    landlineNumber: '',
+    guardian: '',
+    motherTongue: '',
+    religion: '',
+    ethnicGroup: '',
+    facebook: '',
+    instagram: '',
+    email: '',
 };
 
 export default {
-  name: 'RegFormOne',
-  data() {
-    return {
-      fields,
-    };
-  },
-  watch: {
-    fields: {
-      handler(val, oldVal) {
-        // console.log(val.password);
-        this.$emit('formOneData', val);
-      },
-      deep: true,
+    name: 'RegFormOne',
+    data() {
+        return {
+            fields,
+        };
     },
-  },
-  methods: {
-    generateUser() {
-      //   this.fields.username = fields.lastName + fields.firstName;
-      const middle = `${this.fields.middleName.charAt(0)}`;
-      const username = `${this.fields.lastName}${
-        this.fields.firstName
-      }${middle}`;
-      this.fields.username = username.toLowerCase().replace(/ /g, '');
+    watch: {
+        fields: {
+            handler(val, oldVal) {
+                this.$emit('formOneData', val);
+            },
+            deep: true,
+        },
     },
-  },
+    methods: {
+        generateUser() {
+
+            const middle = `${this.fields.middleName.charAt(0)}`;
+            const username = `${this.fields.lastName}${
+                this.fields.firstName
+                }${middle}`;
+            this.fields.username = username.toLowerCase().replace(/ /g, '');
+        },
+    },
+    mounted() {
+        // @TODO: this can be a global function (mixins in vue js)
+        const localData = localStorage.getItem('studentData');
+        const localObj = JSON.parse(localData);
+
+        Object.keys(localObj.formOne).forEach((key) => {
+            if (typeof localObj.formOne[key] !== 'undefined') {
+                this.fields[key] = localObj.formOne[key]
+            }
+        });
+    }
 };
 </script>
 
