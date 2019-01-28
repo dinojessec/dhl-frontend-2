@@ -32,8 +32,8 @@
         <div class="form-group mb-3">
             <h5><i>Father Address</i></h5>
             <!-- checkbox -->
-            <div class="custom-control custom-checkbox" @click="fatherSameAddress(check)">
-                <input type="checkbox" class="custom-control-input" id="fatherSameAddress">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="fatherSameAddress" @change="fatherSameAddress" v-model="sameAddress">
                 <label class="custom-control-label" for="fatherSameAddress">Same Address Above</label>
             </div>
             <div class="form-row">
@@ -121,6 +121,7 @@ export default {
   data() {
     return {
       fields,
+      sameAddress: false
     };
   },
   watch: {
@@ -132,12 +133,20 @@ export default {
     },
   },
   methods: {
-    fatherSameAddress(check) {
+    fatherSameAddress() {
+        if(this.sameAddress) {
             this.fields.fatherHouseNumber = fields.homeNumber;
             this.fields.fatherStreetName = fields.streetName; 
             this.fields.fatherBarangay = fields.barangay;
             this.fields.fatherTown = fields.town;
             this.fields.fatherCity = fields.city;
+        } else {
+            this.fields.fatherHouseNumber = null;
+            this.fields.fatherStreetName = null; 
+            this.fields.fatherBarangay = null;
+            this.fields.fatherTown = null;
+            this.fields.fatherCity = null;
+        }
     },
     
     motherSameAddress() {
