@@ -12,16 +12,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
+                            <router-link class="nav-link" to="/home">Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                           <router-link class="nav-link" to="/about">About</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link class="nav-link" to="/student/register">Register</router-link>
-                            <!-- <a class="nav-link" href="#">Register</a> -->
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -55,5 +52,4 @@ export default {
   }
 }
 </style>
-
 
