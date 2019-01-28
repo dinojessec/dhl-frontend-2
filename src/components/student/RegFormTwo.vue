@@ -32,14 +32,14 @@
         <div class="form-group mb-3">
             <h5><i>Father Address</i></h5>
             <!-- checkbox -->
-            <div class="custom-control custom-checkbox" @click="fatherSameAddress()">
+            <div class="custom-control custom-checkbox" @click="fatherSameAddress(check)">
                 <input type="checkbox" class="custom-control-input" id="fatherSameAddress">
                 <label class="custom-control-label" for="fatherSameAddress">Same Address Above</label>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="fatherHouseNumber">House Number</label>
-                    <input type="text" class="form-control" id="fatherHouseNumber" v-model="fields.fatherHouseNumber">
+                    <input type="text" class="form-control" id="item" v-model="fields.fatherHouseNumber">
                 </div>
                 <div class="form-group col-md-5">
                     <label for="fatherStreetName">Street Name</label>
@@ -99,69 +99,68 @@
 
 <script>
 const fields = {
-    name: 'formTwo',
-    homeNumber: '',
-    streetName: '',
-    barangay: '',
-    town: '',
-    city: '',
-    fatherHouseNumber: '',
-    fatherStreetName: '',
-    fatherBarangay: '',
-    fatherTown: '',
-    fatherCity: '',
-    motherHouseNumber: '',
-    motherStreetName: '',
-    motherBarangay: '',
-    motherTown: '',
-    motherCity: '',
+  name: 'formTwo',
+  homeNumber: '',
+  streetName: '',
+  barangay: '',
+  town: '',
+  city: '',
+  fatherHouseNumber: '',
+  fatherStreetName: '',
+  fatherBarangay: '',
+  fatherTown: '',
+  fatherCity: '',
+  motherHouseNumber: '',
+  motherStreetName: '',
+  motherBarangay: '',
+  motherTown: '',
+  motherCity: '',
 };
 export default {
-    name: 'RegFormTwo',
-    data() {
-        return {
-            fields,
-        };
+  name: 'RegFormTwo',
+  data() {
+    return {
+      fields,
+    };
+  },
+  watch: {
+    fields: {
+      handler(val, oldVal) {
+        this.$emit('formTwoData', val);
+      },
+      deep: true,
     },
-    watch: {
-        fields: {
-            handler(val, oldVal) {
-                this.$emit('formTwoData', val);
-            },
-            deep: true,
-        },
-    },
-    methods: {
-        fatherSameAddress() {
+  },
+  methods: {
+    fatherSameAddress(check) {
             this.fields.fatherHouseNumber = fields.homeNumber;
-            this.fields.fatherStreetName = fields.streetName;
+            this.fields.fatherStreetName = fields.streetName; 
             this.fields.fatherBarangay = fields.barangay;
             this.fields.fatherTown = fields.town;
             this.fields.fatherCity = fields.city;
-        },
-        motherSameAddress() {
-            this.fields.motherHouseNumber = fields.homeNumber;
-            this.fields.motherStreetName = fields.streetName;
-            this.fields.motherBarangay = fields.barangay;
-            this.fields.motherTown = fields.town;
-            this.fields.motherCity = fields.city;
-        },
     },
+    
+    motherSameAddress() {
+      this.fields.motherHouseNumber = fields.homeNumber;
+      this.fields.motherStreetName = fields.streetName;
+      this.fields.motherBarangay = fields.barangay;
+      this.fields.motherTown = fields.town;
+      this.fields.motherCity = fields.city;
+    },
+  },
 
-    mounted() {
+  mounted() {
+    const localData = localStorage.getItem('studentData');
+    const localObj = JSON.parse(localData);
 
-        const localData = localStorage.getItem('studentData');
-        const localObj = JSON.parse(localData);
-
-        if (typeof localObj.formTwo !== 'undefined') {
-            Object.keys(localObj.formTwo).forEach((key) => {
-                if (typeof localObj.formTwo[key] !== 'undefined') {
-                    this.fields[key] = localObj.formTwo[key]
-                }
-            });
+    if (typeof localObj.formTwo !== 'undefined') {
+      Object.keys(localObj.formTwo).forEach((key) => {
+        if (typeof localObj.formTwo[key] !== 'undefined') {
+          this.fields[key] = localObj.formTwo[key];
         }
-
+      });
     }
+  },
 
 };
 
