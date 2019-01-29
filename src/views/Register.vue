@@ -1,15 +1,16 @@
 <template>
-  <div>
+  <div class="container">
+      <reg-form-one v-if="step === 1" @formOneData="handleData"></reg-form-one>
+      <reg-form-two v-if="step === 2" @formTwoData="handleData"></reg-form-two>
+      <reg-form-three v-if="step === 3" @formThreeData="handleData"></reg-form-three>
+      <reg-form-four v-if="step === 4"></reg-form-four>
+      <reg-form-five v-if="step === 5"></reg-form-five>
 
-    <reg-form-one v-if="step === 1" @formOneData="handleData"></reg-form-one>
-    <reg-form-two v-if="step === 2" @formTwoData="handleData"></reg-form-two>
-    <reg-form-three v-if="step === 3" @formThreeData="handleData"></reg-form-three>
-    <reg-form-four v-if="step === 4"></reg-form-four>
-    <reg-form-five v-if="step === 5"></reg-form-five>
-
-    <button type="button" class="btn btn-primary float-right" @click="nextStep()" :disabled="isLastStep()">Next</button>
-    <button type="button" class="btn btn-primary float-left" @click="prevStep()" :disabled="isFirstStep()">Back</button>
-    <button type="button" class="btn btn-success float-right mr-2" @click="saveStudent(data)">Save</button>
+      <div>
+        <button type="button" class="btn btn-primary" @click="nextStep()" :disabled="isLastStep()">Next</button>
+        <button type="button" class="btn btn-primary float-left mr-2" @click="prevStep()" :disabled="isFirstStep()">Back</button>
+        <button type="button" class="btn btn-success float-right" @click="saveStudent(data)">Save</button>
+      </div>
   </div>
 </template>
 
@@ -26,7 +27,7 @@ const FIRST_STEP = 1;
 const LAST_STEP = 5;
 
 // @TODO: make this global
-const apiUrl = 'http://localhost:3000/api/v1'
+const apiUrl = 'http://localhost:3000/api/v1';
 
 export default {
   name: 'Register',
@@ -65,17 +66,17 @@ export default {
     },
 
     saveStudent(student) {
-
+      console.log('student');
+      console.log(student);
       axios.post(`${apiUrl}/students`, {
-        data: student
+        data: student,
       })
-        .then(function (response) {
+        .then((response) => {
           console.log(response);
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log(error);
-        })
-
+        });
     },
 
     handleData(val) {
@@ -90,3 +91,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+
+</style>

@@ -266,22 +266,11 @@
       </div>
       <div class="form-group col-md-4">
         <label for="ethnicGroup">Ethnic Group</label>
-        <select
-          id="ethnicGroup"
-          class="form-control"
-          v-model="fields.ethnicGroup"
-        >
-          <option
-            selected
-            disabled
-          >Select Ethnic group</option>
-          <option value="N.A.">N.A.</option>
-          <option value="Mangyan">Mangyan</option>
-        </select>
+        <input type="text" class="form-control">
       </div>
     </div>
     <!-- 8th row -->
-    <label for="socialMedia"><strong>Social Media Accounts</strong></label>
+    <label for="socialMedia"><strong>Social Media Account</strong></label>
     <div
       class="form-row"
       id="socialMedia"

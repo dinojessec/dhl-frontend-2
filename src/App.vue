@@ -17,7 +17,7 @@
     
     <!-- footer -->
       
-      <global-footer></global-footer>
+      <global-footer class="footer"></global-footer>
       
   </div>
 
@@ -56,14 +56,9 @@ export default {
   margin: 1;
 }
 
-// .footer {
-//   position: absolute;
-//   bottom: 0;
-//   height: 100%;
-//   width: 100%;
-//   line-height: 60px;
-//   background-color: #f8f8ff;
- 
-// }
+.footer {
+  margin: 10px;
+  background-color: #f8f8ff;
+}
 
 </style>
