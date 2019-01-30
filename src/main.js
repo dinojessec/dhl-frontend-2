@@ -15,7 +15,7 @@ Vue.config.productionTip = false;
 
 // Vue.use(VueCarousel);
 Vue.use(VeeValidate);
-// Vue.use(BootstrapVue);
+Vue.use(BootstrapVue);
 
 
 new Vue({

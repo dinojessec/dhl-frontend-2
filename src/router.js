@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import UserInfo from './components/profile/PersonalInformation.vue';
 
 Vue.use(Router);
 
@@ -66,9 +65,9 @@ export default new Router({
       component: () => import('./views/RegistrationForm.vue'),
     },
     {
-      path: '/profile/personalinformation',
+      path: '/user/profile',
       name: 'profileinfo',
-      component: UserInfo,
+      component: () => import('./components/user/personal-information.vue'),
     },
 
   ],

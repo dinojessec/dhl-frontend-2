@@ -1,4 +1,5 @@
 <template>
+
     <div class="container">
         <!-- profile pic -->
         <div class="row">
@@ -12,32 +13,28 @@
                 <p class="font-weight-bold text-left">LRN: 123456789012</p>
             </div>
         </div>
-        <!-- information content -->
+        <!-- content -->
         <div class="row">
             <div class="col-3">
-                <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link" id="personal-info-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">info2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">info2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">info3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">info4</a>
-                    </li>
-                </ul>
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="start-tab" data-toggle="list" href="#start" role="tab" aria-controls="start">start</a>
+                    <a class="list-group-item list-group-item-action" id="next-tab" data-toggle="list" href="#next" role="tab" aria-controls="next">next</a>
+                </div>
             </div>
-            <div class="tab-content ">
-                <label>New Password</label>
-                <input type="password" class="input-xlarge">
-                <div>
-                    <button class="btn btn-primary">Update</button>
+            <div class="col-9">
+                <div class="tab-content" id="nav-tabContent">
+                    <!-- 1st tab -->
+                    <div class="tab-pane fade show active" id="start" role="tabpanel" aria-labelledby="start-tab">
+                        <personal-information></personal-information>
+                    </div>
+                    <!-- 2nd tab -->
+                    <div class="tab-pane fade" id="next" role="tabpanel" aria-labelledby="next-tab">
+                        <contact-information></contact-information>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <!-- end container -->
     </div>
 </template>
@@ -45,10 +42,14 @@
 <script>
 
 
+import PersonalInformation from '@/components/user/personal-information';
+import ContactInformation from '@/components/user/contact-information';
 
 export default {
   name: 'StudentProfile',
   components: {
+      PersonalInformation,
+      ContactInformation
   },
 };
 </script>

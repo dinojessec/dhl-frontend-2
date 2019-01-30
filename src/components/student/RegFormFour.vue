@@ -120,9 +120,9 @@
         </div>
         <div class="form-group col-md-3">
           <label for="schoolLocation">Barangay</label>
-          <select class="form-control">
-            <option></option>
-          </select>
+          <!-- <select class="form-control" v-model="barangay">
+            <option v-for="b in barangays" :key="b.citymunCode">{{ b.brgyDesc }}</option>
+          </select> -->
         </div>
       </div>
     </div>
@@ -270,7 +270,8 @@ export default {
       ],
       cityList: null,
       provinces: [],
-      cities: []
+      cities: [],
+      // barangays: []
     };
   },
 
@@ -278,6 +279,8 @@ export default {
     this.loadProvinces();
 
     this.loadCities();
+
+    // this.loadBarangays();
   },
 
 
@@ -310,7 +313,15 @@ export default {
         .then(response => {
           this.cities = response.data;
         });
-    }
+    },
+
+    // loadBarangays() {
+    //   axios
+    //     .get('/mock-data/barangay.json')
+    //     .then(response => {
+    //       this.barangays = response.data;
+    //     });
+    // }
   }
 };
 </script>

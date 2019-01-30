@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <div class="row"><p>footer</p></div>
+        <div class="d-flex justify-content-center"><p>footer</p></div>
         
        
     </div>
@@ -15,13 +15,13 @@ export default {
 
 <style lang="scss" scoped>
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    background-color: #e0e0e0;
-}
+// .footer {
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     height: 60px;
+//     line-height: 60px;
+//     background-color: #e0e0e0;
+// }
 
 </style>
