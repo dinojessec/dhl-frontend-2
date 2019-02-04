@@ -1,12 +1,10 @@
 <template>
 
   <form>
-    <h4 class="mb-3"><strong>Personal Information</strong></h4>
-    <!-- 1strow -->
-    <div class="form-group mb-3">
-      <h5><i>Input your Name</i></h5>
-      <div class="form-row">
-        <div class="form-group col-md-4">
+    <div class="container">
+        <!-- 1st row -->
+      <div class="row mb-3">
+        <div class="col-sm-12 col-md-4">
           <label for="inputFirstName">First Name</label>
           <input
             type="text"
@@ -16,9 +14,9 @@
             v-validate="'alpha_spaces|required'"
             name="First Name"
           >
-          <span class="alert">{{ errors.first('First Name')}}</span>
+          <small class="alert">{{ errors.first('First Name')}}</small>
         </div>
-        <div class="form-group col-md-4">
+        <div class="col-sm-12 col-md-4">
           <label for="inputMiddleName">Middle Name</label>
           <input
             type="text"
@@ -28,10 +26,10 @@
             v-validate="'alpha_spaces|required'"
             name="Middle Name"
           >
-          <span class="alert">{{ errors.first('Middle Name')}}</span>
+          <small class="alert">{{ errors.first('Middle Name')}}</small>
         </div>
-        <div class="form-group col-md-4">
-          <label for="inputLastName">Last Name</label>
+        <div class="col-sm-12 col-md-4">
+           <label for="inputLastName">Last Name</label>
           <input
             type="text"
             class="form-control"
@@ -40,14 +38,14 @@
             v-validate="'alpha_spaces|required'"
             name="Last Name"
           >
-          <span class="alert">{{ errors.first('Last Name')}}</span>
+          <small class="alert">{{ errors.first('Last Name')}}</small>
         </div>
+
       </div>
-    </div>
-    <!-- 2ndrow -->
-    <div class="form-group mb-3">
-      <div class="form-row">
-        <div class="form-group col-md-6">
+        
+        <!-- 2nd row -->
+      <div class="row mb-3">
+        <div class="col-sm-12 col-md-6">
           <label for="inputUsername">Username</label>
           <input
             readonly
@@ -62,8 +60,7 @@
             @click="generateUser()"
           >Click to Generate Username</button>
         </div>
-
-        <div class="form-group col-md-6">
+        <div class="col-sm-12 col-md-6">
           <label for="inputPassword">Password</label>
           <input
             type="password"
@@ -76,238 +73,155 @@
           >
           <span class="alert">{{ errors.first('password')}}</span>
         </div>
+
       </div>
-    </div>
-    <!-- 3rd -->
-    <div class="form-group mb-3">
-      <h5><i>Competency</i></h5>
-      <div class="form-row">
-        <div class="form-group col-md-4">
+
+        <!-- 3rd row -->
+      <div class="row mb-3">
+        <div class="col-sm-12 col-md-4">
           <label for="ALS">Alternative Learning System(ALS) passer</label>
-          <select
-            id="ALS"
-            class="form-control"
-            v-model="fields.ALS"
-          >
-            <option
-              selected
-              disabled
-            >Indicate if you passed ALS test</option>
+          <select id="ALS" class="form-control" v-model="fields.ALS" >
+            <option value="" selected disabled>Indicate if you passed ALS test</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
         </div>
-        <div class="form-group col-md-5">
-          <label for="PEPT">Philippine Educational Placement Test(PEPT) passer</label>
-          <select
-            id="PEPT"
-            class="form-control"
-            v-model="fields.PEPT"
-          >
-            <option
-              selected
-              disabled
-            >Indicate if you passed PEPT test</option>
+        <div class="col-sm-12 col-md-4">
+          <label for="PEPT">Phil Educational Placement Test(PEPT) passer</label>
+          <select id="PEPT" class="form-control" v-model="fields.PEPT">
+            <option value="" selected disabled>Indicate if you passed PEPT test</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
         </div>
-        <div class="form-group col-md-3">
+        <div class="col-sm-12 col-md-4">
           <label for="NC">National Certificate(NC) holder</label>
-          <select
-            id="NC"
-            class="form-control"
-            v-model="fields.NC"
-          >
-            <option
-              selected
-              disabled
-            >Indicate if you passed NC test</option>
+          <select id="NC" class="form-control" v-model="fields.NC">
+            <option value="" selected disabled>Indicate if you passed NC test</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
         </div>
       </div>
-    </div>
-    <!-- 4th row -->
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputLRN">LRN</label>
-        <input
-          type="number"
-          class="form-control"
-          id="inputLRN"
-          placeholder="e.g. 123456789012"
-          v-model="fields.lrn"
-        >
-      </div>
-      <div class="form-group col-md-4">
-        <label for="gradeLevel">Grade Level</label>
-        <select
-          id="gradeLevel"
-          class="form-control"
-          v-model="fields.gradeLevel"
-        >
-          <option
-            selected
-            disabled
-          >Select grade level</option>
-          <option value="Grade11">Grade 11</option>
-          <option value="Grade12">Grade 12</option>
-        </select>
-      </div>
-      <div class="form-group col-md-4">
-        <label for="strand">Strand</label>
-        <select
-          id="strand"
-          class="form-control"
-          v-model="fields.strand"
-        >
-          <option
-            selected
-            disabled
-          >Select your strand</option>
-          <option value="STEM">STEM</option>
-          <option value="IT">Information Technology</option>
-        </select>
-      </div>
-    </div>
-    <!-- 5throw -->
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputBirthday">Birthday</label>
-        <input
-          type="date"
-          class="form-control"
-          id="inputBirthday"
-          v-model="fields.birthday"
-        >
 
+        <!-- 4th row -->
+      <div class="row mb-3">
+        <div class="col-sm-12 col-md-4">
+          <label for="inputLRN">LRN</label>
+          <input type="text" class="form-control" id="inputLRN" placeholder="e.g. 123456789012" v-model="fields.lrn">
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="gradeLevel">Grade Level</label>
+          <select id="gradeLevel" class="form-control" v-model="fields.gradeLevel">
+            <option value="" selected disabled>Select grade level</option>
+            <option value="Grade11">Grade 11</option>
+            <option value="Grade12">Grade 12</option>
+          </select>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="strand">Strand</label>
+          <select id="strand" class="form-control" v-model="fields.strand">
+            <option value="" selected disabled>Select your strand</option>
+            <option value="STEM">STEM</option>
+            <option value="IT">Information Technology</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group col-md-4">
-        <label for="inputPlaceOfBirth">Place of Birth</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputPlaceOfBirth"
-          v-model="fields.placeOfBirth"
-        >
 
+        <!-- 5th row -->
+      <div class="row mb-3">
+        <div class="col-sm-12 col-md-4">
+          <label for="inputBirthday">Birthday</label>
+          <input type="date" class="form-control" id="inputBirthday" v-model="fields.birthday">
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="inputPlaceOfBirth">Place of Birth</label>
+          <input type="text" class="form-control" id="inputPlaceOfBirth" v-model="fields.placeOfBirth">
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="sex">Sex</label>
+          <select id="sex" class="form-control" v-model="fields.gender">
+            <option value="" selected disabled>Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group col-md-4">
-        <label for="sex">Sex</label>
-        <select
-          id="sex"
-          class="form-control"
-          v-model="fields.gender"
-        >
-          <option
-            selected
-            disabled
-          >Select gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
 
+        <!-- 6th row -->
+      <div class="row mb-3">
+        <div class="col-sm-12 col-md-4">
+          <label for="inputMobileNumber">Mobile Number</label>
+          <input type="text" class="form-control" id="inputMobileNumber" placeholder="e.g. 09-00-000-0000" v-model="fields.mobileNumber" v-validate="'digits:11'" name="mobile">
+          <span> {{ errors.first('mobile')}}</span>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="inputLandlineNumber">Landline Number</label>
+          <input type="text" class="form-control" id="inputLandlineNumber" placeholder="e.g. 000-0000" v-model="fields.landlineNumber" v-validate="'digits:11'" name="landline">
+          <span>{{ errors.first('landline')}}</span>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="inputGuardian">Guardian</label>
+          <input type="text" class="form-control" id="inputGuardian" placeholder="Point of Contact" v-model="fields.guardian">
+        </div>
       </div>
-    </div>
-    <!-- 6th row -->
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputMobileNumber">Mobile Number</label>
-        <input
-          type="number"
-          class="form-control"
-          id="inputMobileNumber"
-          placeholder="e.g. 09-00-000-0000"
-          v-model="fields.mobileNumber"
-        >
+
+        <!-- 7th row -->
+      <div class="row mb-3">
+        <div class="col-sm-12 col-md-4">
+          <label for="inputMotherTongue">Mother Tongue</label>
+          <select id="motherTongue" class="form-control" v-model="fields.motherTongue">
+            <option value="filipino">Filipino</option>
+            <option value="english">English</option>
+            <option v-bind:value="{ other: true }">Other</option>
+          </select>
+          <div v-if="fields.motherTongue.other">
+            <span>Please specify below..</span>
+            <input type="text" class="form-control" id="inputMotherTongue">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="inputReligion">Religion</label>
+          <select id="religion" class="form-control" v-model="fields.religion">
+            <option value="Catholic">Catholic</option>
+            <option v-bind:value="{ other: true }">Other</option>
+          </select>
+          <div v-if="fields.religion.other">
+            <span>Please specify below..</span>
+            <input type="text" class="form-control" id="inputReligion">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="inputReligion">Ethnic Group</label>
+          <select id="ethnicGroup" class="form-control" v-model="fields.ethnicGroup">
+            <option value="Manileno">Manileno</option>
+            <option v-bind:value="{ other: true }">Other</option>
+          </select>
+          <div v-if="fields.ethnicGroup.other">
+            <span>Please specify below..</span>
+            <input type="text" class="form-control" id="inputEthnicGroup">
+          </div>
+        </div>
       </div>
-      <div class="form-group col-md-4">
-        <label for="inputLandlineNumber">Landline Number</label>
-        <input
-          type="number"
-          class="form-control"
-          id="inputLandlineNumber"
-          placeholder="e.g. 000-0000"
-          v-model="fields.landlineNumber"
-        >
+
+        <!-- 8th row -->
+      <div class="row mb-3">
+        <div class="col-sm-12 col-md-4">
+          <label for="inputFacebook">Facebook</label>
+          <input type="text" class="form-control" id="inputFacebook" v-model="fields.facebook">
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="inputInstagram">Instagram</label>
+          <input type="text" class="form-control" id="inputInstagram" v-model="fields.instagram">
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <label for="inputEmail">Email</label>
+          <input type="text" class="form-control" id="inputEmail" v-model="fields.email" v-validate="'required|email'" name="email">
+          <small class="alert">{{ errors.first('email')}}</small>
+        </div>
       </div>
-      <div class="form-group col-md-4">
-        <label for="inputGuardian">Guardian</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputGuardian"
-          placeholder="Point of Contact"
-          v-model="fields.guardian"
-        >
-      </div>
-    </div>
-    <!-- 7th row -->
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputMotherTongue">Mother Tongue</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputMotherTongue"
-          v-model="fields.motherTongue"
-        >
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputReligion">Religion</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputReligion"
-          v-model="fields.religion"
-        >
-      </div>
-      <div class="form-group col-md-4">
-        <label for="ethnicGroup">Ethnic Group</label>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <!-- 8th row -->
-    <label for="socialMedia"><strong>Social Media Account</strong></label>
-    <div
-      class="form-row"
-      id="socialMedia"
-    >
-      <div class="form-group mb-3 col-md-4">
-        <label for="facebook">Facebook</label>
-        <input
-          type="text"
-          class="form-control"
-          id="facebook"
-          aria-describedby="basic-addon3"
-          v-model="fields.facebook"
-        >
-      </div>
-      <div class="form-group mb-3 col-md-4">
-        <label for="instagram">Instagram</label>
-        <input
-          type="text"
-          class="form-control"
-          id="instagram"
-          aria-describedby="basic-addon3"
-          v-model="fields.instagram"
-        >
-      </div>
-      <div class="form-group mb-3 col-md-4">
-        <label for="email">Email</label>
-        <input
-          type="text"
-          class="form-control"
-          id="email"
-          aria-describedby="basic-addon3"
-          v-model="fields.email"
-          v-validate="'required|email'"
-          name="email"
-        >
-        <small class="alert">{{ errors.first('email')}}</small>
-      </div>
+
+        <!-- end container -->
     </div>
   </form>
 
@@ -384,7 +298,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  border: 1px solid black;
+  // display: flex;
 }
 
 .alert {
