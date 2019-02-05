@@ -5,7 +5,7 @@
             <div class="col">
                  <label for="landlineNumber">Landline Number</label>
                 <input class="form-control" type="text" id="landlineNumber" disabled>
-            </div>  
+            </div>
         </div>
             <!-- 2nd row -->
         <div class="row">
@@ -41,9 +41,8 @@
 
 <script>
 export default {
-    name: 'ContactInformation'
-    
-}
+  name: 'ContactInformation'
+};
 </script>
 
 <style lang="scss" scoped>

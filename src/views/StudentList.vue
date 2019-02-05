@@ -5,17 +5,39 @@
       <div class="col-md-10 xs-12">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search By</button>
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >Search By</button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Name</a>
-              <a class="dropdown-item" href="#">Age</a>
-              <a class="dropdown-item" href="#">Strand</a>
+              <a
+                class="dropdown-item"
+                href="#"
+              >Name</a>
+              <a
+                class="dropdown-item"
+                href="#"
+              >Age</a>
+              <a
+                class="dropdown-item"
+                href="#"
+              >Strand</a>
             </div>
           </div>
-          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Text input with dropdown button"
+          >
         </div>
       </div>
-      <button class="btn btn-primary mb-3 col-md-2 xs-12" type="search">Search</button>
+      <button
+        class="btn btn-primary mb-3 col-md-2 xs-12"
+        type="search"
+      >Search</button>
     </div>
     <div class="table-responsive ">
       <table class="table table-hover">

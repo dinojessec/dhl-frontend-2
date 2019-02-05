@@ -5,7 +5,7 @@
             <div class="col">
                  <label for="birthday">Birthday</label>
                 <input class="form-control" type="text" id="birthday" disabled>
-            </div>  
+            </div>
         </div>
             <!-- 2nd row -->
         <div class="row">
@@ -62,9 +62,8 @@
 
 <script>
 export default {
-    name: 'PersonalInformation'
-    
-}
+  name: 'PersonalInformation'
+};
 </script>
 
 <style lang="scss" scoped>

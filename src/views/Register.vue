@@ -1,97 +1,106 @@
 <template>
   <div class="container">
-      <reg-form-one v-if="step === 1" @formOneData="handleData"></reg-form-one>
-      <reg-form-two v-if="step === 2" @formTwoData="handleData"></reg-form-two>
-      <reg-form-three v-if="step === 3" @formThreeData="handleData"></reg-form-three>
-      <reg-form-four v-if="step === 4"></reg-form-four>
-      <reg-form-five v-if="step === 5"></reg-form-five>
-
-      <div>
-        <button type="button" class="btn btn-primary" @click="nextStep()" :disabled="isLastStep()">Next</button>
-        <button type="button" class="btn btn-primary float-left mr-2" @click="prevStep()" :disabled="isFirstStep()">Back</button>
-        <button type="button" class="btn btn-success float-right" @click="saveStudent(data)">Save</button>
+    <div class="row">
+      <div class="col">
+        {{ step }}
+        <reg-form-one v-if="step === 1"></reg-form-one>
+        <!-- <reg-form-two  v-if="step === 2"></reg-form-two> -->
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-12 col-md-6 my-1">
+            <div class="d-flex flex-column flex-md-row btn-options">
+              <button
+                class="btn btn-primary"
+                @click="backStep()"
+                v-bind:disabled="isBackDisabled()"
+              >Back</button>
+              <button
+                class="btn btn-primary"
+                @click="nextStep()"
+                v-bind:disabled="isNextDisabled()"
+              >Next</button>
+              <button
+                type="button"
+                class="btn btn-link btn-block"
+                @click="saveStudent()"
+                v-bind:disabled="isSaveDisabled()"
+              >Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </template>
 
 <script>
-import axios from 'axios';
 
-import RegFormOne from '@/components/student/RegFormOne';
-import RegFormTwo from '@/components/student/RegFormTwo';
-import RegFormThree from '@/components/student/RegFormThree';
-import RegFormFour from '@/components/student/RegFormFour';
-import RegFormFive from '@/components/student/RegFormFive';
+// import axios from 'axios';
 
-const FIRST_STEP = 1;
-const LAST_STEP = 5;
-
-// @TODO: make this global
-const apiUrl = 'http://localhost:3000/api/v1';
+import RegFormOne from '@/components/student/RegFormOne.vue';
+// import RegFormTwo from '@/components/student/RegFormTwo.vue';
 
 export default {
   name: 'Register',
   components: {
     RegFormOne,
-    RegFormTwo,
-    RegFormThree,
-    RegFormFour,
-    RegFormFive,
-  },
-  methods: {
-    isFirstStep() {
-      return this.step === FIRST_STEP;
-    },
-
-    isLastStep() {
-      return this.step === LAST_STEP;
-    },
-
-    nextStep() {
-      if (this.step <= 4) {
-        this.step++;
-        this.storeData(this.data);
-      }
-    },
-
-    prevStep() {
-      if (this.step >= 2) {
-        this.step--;
-      }
-    },
-
-    storeData(student) {
-      localStorage.removeItem('studentData');
-      localStorage.setItem('studentData', JSON.stringify(student));
-    },
-
-    saveStudent(student) {
-      console.log('student');
-      console.log(student);
-      axios.post(`${apiUrl}/students`, {
-        data: student,
-      })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-
-    handleData(val) {
-      this.data[val.name] = val;
-    },
+    // RegFormTwo,
   },
   data() {
     return {
       step: 1,
-      data: {},
     };
   },
+
+  methods: {
+    nextStep() {
+      if (this.step <= 4) {
+        this.step = this.step + 1;
+      }
+    },
+
+    backStep() {
+      if (this.step >= 2) {
+        this.step = this.step - 1;
+      }
+    },
+
+    isBackDisabled() {
+      return this.step === 1;
+    },
+
+    isNextDisabled() {
+      return this.step === 5;
+    },
+
+    isSaveDisabled() {
+      const errorCount = this.$store.getters.getErrorCount;
+      return errorCount > 0;
+    },
+
+    saveStudent() {
+    }
+  },
+
 };
 </script>
 
 <style lang="scss" scoped>
+.btn-options {
+  .btn {
+    margin-left: 5px;
 
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 5px;
+      margin-left: 0px;
+    }
+  }
+}
 </style>

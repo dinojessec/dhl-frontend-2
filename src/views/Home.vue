@@ -9,7 +9,7 @@
           Slide 2 Content
         </slide>
       </carousel>
-      
+
   </div>
 </template>
 
@@ -20,16 +20,16 @@ import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   name: 'Home',
-   components: {
+  components: {
     Carousel,
-    Slide
+    Slide,
   },
 
   data() {
-      return {
-        
-      };
-    }
+    return {
+
+    };
+  },
 };
 </script>
 

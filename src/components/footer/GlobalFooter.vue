@@ -1,14 +1,14 @@
 <template>
     <div class="container-fluid">
         <div class="d-flex justify-content-center"><p>footer</p></div>
-        
-       
+
+
     </div>
 </template>
 
 <script>
 export default {
-    name: 'GlobalFooter',
+  name: 'GlobalFooter',
 };
 
 </script>
