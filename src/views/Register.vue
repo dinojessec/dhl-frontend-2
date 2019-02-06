@@ -4,7 +4,7 @@
       <div class="col">
         {{ step }}
         <reg-form-one v-if="step === 1"></reg-form-one>
-        <!-- <reg-form-two  v-if="step === 2"></reg-form-two> -->
+        <reg-form-two  v-if="step === 2"></reg-form-two>
       </div>
     </div>
 
@@ -44,13 +44,13 @@
 // import axios from 'axios';
 
 import RegFormOne from '@/components/student/RegFormOne.vue';
-// import RegFormTwo from '@/components/student/RegFormTwo.vue';
+import RegFormTwo from '@/components/student/RegFormTwo.vue';
 
 export default {
   name: 'Register',
   components: {
     RegFormOne,
-    // RegFormTwo,
+    RegFormTwo,
   },
   data() {
     return {
@@ -85,7 +85,7 @@ export default {
     },
 
     saveStudent() {
-    }
+    },
   },
 
 };
