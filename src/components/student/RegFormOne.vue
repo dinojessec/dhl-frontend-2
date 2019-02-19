@@ -50,7 +50,7 @@
     <!-- 2nd row -->
     <div class="form-row">
       <div class="form-group required col-12 col-md-5">
-        <label class="control-label" for="username">Usernamedf</label>
+        <label class="control-label" for="username">Username</label>
         <input
           type="text"
           class="form-control"
@@ -467,7 +467,7 @@ export default {
       
       if(typeof firstName !== 'undefined' && typeof middleName !== 'undefined' && typeof lastName !== 'undefined') {
         const username = `${lastName}${firstName}${middleName.charAt(0)}`;
-        this.student.username = username.replace(/\s/g, '');
+        this.student.username = username.replace(/\s/g, '').toLowerCase();
       }
     },
   },

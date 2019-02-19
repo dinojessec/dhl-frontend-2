@@ -29,6 +29,8 @@ const store = new Vuex.Store({
       const formFields = state.student.formOne;
       return Object.keys(formFields).length;
     },
+
+    getStudentData: state => state.student,
   },
 });
 
