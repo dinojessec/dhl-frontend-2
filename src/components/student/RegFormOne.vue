@@ -210,12 +210,8 @@
           {{errors.first('Strand')}}
         </div>
           <option
-            value=""
-            selected
-            disabled
-          >Select your strand</option>
-          <option value="STEM">STEM</option>
-          <option value="IT">Information Technology</option>
+            v-for="strand of strandList" :key="strand.id"
+          >{{ strand.name }}</option>
         </select>
       </div>
     </div>
@@ -434,6 +430,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'RegFormOne',
   data() {
@@ -441,17 +439,21 @@ export default {
       student: {
         username: null,
       },
+      strandList: {},
     };
   },
+
+  beforeCreate() {
+    axios.get('http://localhost:3000/api/v1/students').then((res) => { this.strandList = res.data; });
+  },
+
   watch: {
     student: {
       handler(val) {
-
         const dataMap = {
           form: 'formOne',
           data: val,
         };
-
         this.$store.commit('studentStateChange', dataMap);
         this.$store.commit('studentFormErrorCount', this.errors.count());
       },
@@ -461,12 +463,11 @@ export default {
 
   methods: {
     generateUser() {
-      const firstName = this.student.firstName;
-      const middleName = this.student.middleName;
-      const lastName = this.student.lastName;
-      
-      if(typeof firstName !== 'undefined' && typeof middleName !== 'undefined' && typeof lastName !== 'undefined') {
-        const username = `${lastName}${firstName}${middleName.charAt(0)}`;
+      const studentFirstName = this.student.firstName;
+      const studentMiddleName = this.student.middleName;
+      const studentLastName = this.student.lastName;
+      if (typeof studentFirstName !== 'undefined' && typeof studentMiddleName !== 'undefined' && typeof studentLastName !== 'undefined') {
+        const username = `${studentLastName}${studentFirstName}${studentMiddleName.charAt(0)}`;
         this.student.username = username.replace(/\s/g, '').toLowerCase();
       }
     },

@@ -69,6 +69,11 @@ export default new Router({
       name: 'profileinfo',
       component: () => import('./components/user/personal-information.vue'),
     },
+    {
+      path: '/modal',
+      name: 'modal',
+      component: () => import('./components/student/Modal.vue'),
+    },
 
   ],
 });
