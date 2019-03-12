@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1>test</h1>
       <carousel :per-page="1" :navigate-to="0" :mouse-drag="true">
         <slide>
           <img src="@/assets/deehwa-logo.jpeg" />
@@ -46,5 +45,8 @@ export default {
   //   min-height: 10rem;
   // }
 
+.container {
+  background-color: #e0e0e0;
+}
 
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col">
-        {{ step }}
-        <reg-form-one v-if="step === 1"></reg-form-one>
-        <reg-form-two  v-if="step === 2"></reg-form-two>
+      <div class="col shadow p-3 mb-5 bg-white rounded-pill">
+        <grade-level v-if="step === 1"></grade-level>
+        <!-- <reg-form-two  v-if="step === 2"></reg-form-two>
+        <reg-form-three v-if="step === 3"></reg-form-three> -->
       </div>
     </div>
 
@@ -41,16 +41,15 @@
 
 <script>
 
-// import axios from 'axios';
+import axios from 'axios';
 
-import RegFormOne from '@/components/student/RegFormOne.vue';
-import RegFormTwo from '@/components/student/RegFormTwo.vue';
+import gradeLevel from '../components/new-student/grade-level';
+
 
 export default {
   name: 'Register',
   components: {
-    RegFormOne,
-    RegFormTwo,
+    gradeLevel,
   },
   data() {
     return {
@@ -88,14 +87,14 @@ export default {
       const studentData = this.$store.getters.getStudentData;
       console.log(studentData);
       // axios.post('http://localhost:3000/register',{})
-      // axios
-      //   .post('http://localhost:3000/api/v1/students',studentData)
-      //   .then(response => {
-      //     console.log(response);
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //   });
+      axios
+        .post('http://localhost:3000/api/v1/students', studentData)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
