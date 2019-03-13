@@ -64,11 +64,11 @@ export default new Router({
       name: 'registrationForm',
       component: () => import('./views/RegistrationForm.vue'),
     },
-    {
-      path: '/user/profile',
-      name: 'profileinfo',
-      component: () => import('./components/user/personal-information.vue'),
-    },
+    // {
+    //   path: '/user/profile',
+    //   name: 'profileinfo',
+    //   component: () => import('./components/user/address-information.vue'),
+    // },
     {
       path: '/modal',
       name: 'modal',

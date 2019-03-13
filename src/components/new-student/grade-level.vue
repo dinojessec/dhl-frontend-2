@@ -1,28 +1,11 @@
 <template>
     <form>
         <h3>Register</h3>
-            <!-- input grade level -->
-        <div class="form-row mb-3">
-            <div class="form-group col-12 col-md-6">
-                <label>Strand</label>
-                <select  class="form-control shadow bg-white rounded">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
-            </div>
-            <div class="form-group col-12 col-md-6">
-                <label>Grade Level</label>
-                <select  class="form-control shadow bg-white rounded">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
-            </div>
-        </div>
             <!-- input name -->
         <div class="form-row">
             <div class="form-group col-12 col-md-4">
                 <label>First Name</label>
-                <input type="text" class="form-control shadow bg-white rounded" placeholder="First name" v-model="firstName">
+                <input type="text" class="form-control shadow bg-white rounded" placeholder="First name" v-model="firstName" autofocus>
             </div>
             <div class="form-group col-12 col-md-4">
                 <label>Middle Name</label>
@@ -79,7 +62,22 @@
             </div>
         </div>
 
-
+        <div class="form-row mb-3">
+            <div class="form-group col-12 col-md-6">
+                <label>Strand</label>
+                <select  class="form-control shadow bg-white rounded">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label>Grade Level</label>
+                <select  class="form-control shadow bg-white rounded">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+        </div>
     </form>
 </template>
 

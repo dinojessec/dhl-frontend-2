@@ -17,7 +17,7 @@
 
     <!-- footer -->
 
-      <global-footer class="footer"></global-footer>
+      <!-- <global-footer class="footer"></global-footer> -->
 
   </div>
 

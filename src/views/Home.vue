@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container shadow p-3 mb-5 bg-white rounded">
       <carousel :per-page="1" :navigate-to="0" :mouse-drag="true">
         <slide>
           <img src="@/assets/deehwa-logo.jpeg" />
