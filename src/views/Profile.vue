@@ -20,7 +20,8 @@
           <h4 class="">Strand</h4>
           <h4 class="">Grade Level</h4>
           <h4 class="">LRN</h4>
-          <p>&nbsp;</p>
+          <h4 class="">Section</h4>
+          <!-- <p>&nbsp;</p> -->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#Profile" role="tab" aria-controls="profiile" aria-selected="true">Profile</a>
@@ -48,12 +49,6 @@
   <div class="row">
     <div class="col-md-3 col-12">
       <div class="other-info">
-        <h4 class="display-5">Personal info</h4>
-          <h6 class="">Date of Birth</h6>
-          <h6 class="">Age</h6>
-          <h6 class="">Email</h6>
-          <h6 class="">Mobile #</h6>
-          <h6 class="">Landline #</h6>
         <h4 class="display-5">Account info</h4>
           <h6 class="">Username</h6>
           <a href="#" class="badge badge-primary">Change Password</a>
@@ -62,7 +57,7 @@
     <div class="col-12 col-md-9">
       <div class="tab-content profile-tab" id="myTabContent">
         <div class="tab-pane fade show active" id="Profile" role="tabpanel" aria-labelledby="profile-tab">
-          
+          <personal-information></personal-information>
         </div>
         <div class="tab-pane fade" id="Address" role="tabpanel" aria-labelledby="address-tab">
           <address-information></address-information>
@@ -87,6 +82,7 @@
 
 <script>
 
+import PersonalInformation from '@/components/user/personal-information.vue';
 import AddressInformation from '@/components/user/address-information.vue';
 import ParentInformation from '@/components/user/parent-information.vue';
 import EducationInformation from '@/components/user/education-information.vue';
@@ -94,6 +90,7 @@ import EducationInformation from '@/components/user/education-information.vue';
 export default {
   name: 'StudentProfile',
   components: {
+    PersonalInformation,
     AddressInformation,
     ParentInformation,
     EducationInformation,

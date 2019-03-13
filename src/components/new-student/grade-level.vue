@@ -78,6 +78,18 @@
                 </select>
             </div>
         </div>
+
+        <!-- voucher -->
+        <div class="form-row p-2">
+            <div class="col">
+                <label>Voucher</label>
+                <input type="text" class="form-control shadow bg-white rounded" placeholder="input voucher code">
+            </div>
+            <div class="col">
+                <label>Referred By:</label>
+                <input type="text" class="form-control shadow bg-white rounded" placeholder="Reffered by:">
+            </div>
+        </div>
     </form>
 </template>
 
