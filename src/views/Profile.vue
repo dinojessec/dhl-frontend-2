@@ -1,6 +1,13 @@
 <template>
 
   <div class="container">
+    <div class="row p-1">
+      <div class="col-12">
+        <div class="alert alert-danger" role="alert">
+          This message will show if any of the required fields are empty
+        </div>
+      </div>
+    </div>
     <div class="row p-2">
       <div class="p-2 col-md-3 col-12">
         <!-- <div class="profile-img"> -->
