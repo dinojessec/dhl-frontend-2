@@ -30,19 +30,30 @@
             </div>
         </div>
         <div class="form-row p-2">
-            <div class="col">
+            <div class="col-8">
                 <label>Junior High School Address</label>
                 <input type="text" class="form-control" placeholder="Junior High School Location">
+            </div>
+            <div class="col-4">
+                <label>School Type</label>
+                <select class="form-control">
+                    <option selected>Choose..</option>
+                    <option>Public</option>
+                    <option>Private</option>
+                </select>
             </div>
         </div>
         
         <h3>Organization</h3>
         <div class="form-row p-2">
-            <div class="col">
+            <!-- <div class="col">
                 <input type="text" class="form-control" placeholder="Organization">
             </div>
             <div class="col">
                 <input type="text" class="form-control" placeholder="Organization Awards">
+            </div> -->
+            <div class="col">
+                <textarea class="form-control" rows="3" placeholder="Input list of Organization and Awards received from that Org"></textarea>
             </div>
         </div>
 
