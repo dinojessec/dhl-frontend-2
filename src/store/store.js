@@ -6,14 +6,14 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     student: {
-      formOne: {},
+
     },
     formErrorCount: [],
   },
   mutations: {
     studentStateChange(state, student) {
       const stateRef = state;
-      stateRef.student[student.form] = student.data;
+      stateRef.student = student;
     },
 
     studentFormErrorCount(state, errorCount) {

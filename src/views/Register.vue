@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col shadow p-3 mb-5 bg-white rounded-pill">
-        <grade-level v-if="step === 1"></grade-level>
+        <grade-level></grade-level>
         <!-- <reg-form-two  v-if="step === 2"></reg-form-two>
         <reg-form-three v-if="step === 3"></reg-form-three> -->
       </div>
@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col-12 col-md-6 my-1">
             <div class="d-flex flex-column flex-md-row btn-options">
-              <button
+              <!-- <button
                 class="btn btn-primary"
                 @click="backStep()"
                 v-bind:disabled="isBackDisabled()"
@@ -22,7 +22,7 @@
                 class="btn btn-primary"
                 @click="nextStep()"
                 v-bind:disabled="isNextDisabled()"
-              >Next</button>
+              >Next</button> -->
               <button
                 type="button"
                 class="btn btn-link btn-block"
@@ -45,38 +45,35 @@ import axios from 'axios';
 
 import gradeLevel from '../components/new-student/grade-level';
 
-
 export default {
   name: 'Register',
   components: {
     gradeLevel,
   },
   data() {
-    return {
-      step: 1,
-    };
+    return {};
   },
 
   methods: {
-    nextStep() {
-      if (this.step <= 4) {
-        this.step = this.step + 1;
-      }
-    },
+    // nextStep() {
+    //   if (this.step <= 4) {
+    //     this.step = this.step + 1;
+    //   }
+    // },
 
-    backStep() {
-      if (this.step >= 2) {
-        this.step = this.step - 1;
-      }
-    },
+    // backStep() {
+    //   if (this.step >= 2) {
+    //     this.step = this.step - 1;
+    //   }
+    // },
 
-    isBackDisabled() {
-      return this.step === 1;
-    },
+    // isBackDisabled() {
+    //   return this.step === 1;
+    // },
 
-    isNextDisabled() {
-      return this.step === 5;
-    },
+    // isNextDisabled() {
+    //   return this.step === 5;
+    // },
 
     isSaveDisabled() {
       const errorCount = this.$store.getters.getErrorCount;
