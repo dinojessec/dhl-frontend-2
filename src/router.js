@@ -27,7 +27,7 @@ export default new Router({
       component: () => import('./views/SignIn.vue'),
     },
     {
-      path: '/student/register',
+      path: '/register',
       name: 'register',
       component: () => import('./views/Register.vue'),
     },

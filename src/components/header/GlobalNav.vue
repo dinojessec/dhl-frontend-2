@@ -43,7 +43,7 @@
             <li class="nav-item">
               <router-link
                 class="nav-link"
-                to="/student/register"
+                to="/register"
               >Register</router-link>
             </li>
           </ul>

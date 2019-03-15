@@ -1,7 +1,6 @@
 <template>
     <form>
         <h3>Register</h3>
-        {{ student }}
             <!-- input name -->
         <div class="form-row">
             <div class="form-group col-12 col-md-4">
