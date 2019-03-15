@@ -82,12 +82,14 @@ export default {
 
     saveStudent() {
       const studentData = this.$store.getters.getStudentData;
-      console.log(studentData);
+      // console.log(studentData);
       // axios.post('http://localhost:3000/register',{})
       axios
         .post('http://localhost:3000/api/v1/students', studentData)
         .then((response) => {
-          console.log(response);
+          console.log('response');
+          console.log(response.data.message);
+          console.log('response');
         })
         .catch((error) => {
           console.log(error);

@@ -25,7 +25,7 @@
 
 <script>
 import GlobalNav from '@/components/header/GlobalNav.vue';
-import GlobalFooter from '@/components/footer/GlobalFooter.vue';
+// import GlobalFooter from '@/components/footer/GlobalFooter.vue';
 
 import store from './store/store';
 
@@ -34,7 +34,7 @@ export default {
   store,
   components: {
     GlobalNav,
-    GlobalFooter,
+    // GlobalFooter,
   },
 };
 </script>

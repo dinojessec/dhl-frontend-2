@@ -9,6 +9,7 @@
           <router-link
             class="nav-link"
             to="/"
+            exact
           ><img src="@/assets/deehwa-logo.jpeg" /></router-link>
         </a>
         <button
@@ -32,18 +33,21 @@
               <router-link
                 class="nav-link"
                 to="/"
+                exact
               >Home</router-link>
             </li>
             <li class="nav-item">
               <router-link
                 class="nav-link"
                 to="/about"
+                exact
               >About</router-link>
             </li>
             <li class="nav-item">
               <router-link
                 class="nav-link"
                 to="/register"
+                exact
               >Register</router-link>
             </li>
           </ul>
@@ -79,6 +83,14 @@ export default {
       font-weight: bold;
     }
   }
+}
+
+a {
+  border-radius: 10px;
+}
+
+.router-link-active {
+  background:#6193cc;
 }
 </style>
 
