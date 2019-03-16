@@ -102,10 +102,10 @@ export default {
         .post('http://localhost:3000/api/v1/students', studentData)
         .then((response) => {
           console.log(response.data.message);
-          // const submitResult = response.data.message;
-          // if (submitResult === 'success') {
-          //   this.$router.replace({ path: '/register-success' });
-          // }
+          const submitResult = response.data.message;
+          if (submitResult === 'success') {
+            this.$router.replace({ path: '/register-success' });
+          }
         })
         .catch((error) => {
           console.log(error);

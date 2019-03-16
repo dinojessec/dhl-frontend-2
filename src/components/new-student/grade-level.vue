@@ -42,7 +42,8 @@
                 <label>Gender</label>
                 <select  class="form-control shadow bg-white rounded" v-model="student.gender">
                     <option selected>Choose...</option>
-                    <option>...</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
                 </select>
             </div>
         </div>
@@ -65,7 +66,7 @@
         <div class="form-row mb-3">
             <div class="form-group col-12 col-md-6">
                 <label>Strand</label>
-                <select  class="form-control shadow bg-white rounded" v-model="student.strand">
+                <select  class="form-control shadow bg-white rounded" v-model="student.strandId">
                     <!-- <option selected>Choose...</option> -->
                     <option v-for="item in strandLists" :key="item.strandId" v-bind:value="item.strandId">{{ item.strandName }}</option>
                 </select>
