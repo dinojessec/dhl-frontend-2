@@ -3,7 +3,7 @@
     {{ strandLists }}
     <div class="row">
       <div class="col shadow p-3 mb-5 bg-white rounded-pill">
-        <grade-level :strandList="strandLists"></grade-level>
+        <grade-level v-bind:strandLists="strandLists"></grade-level>
         <!-- <reg-form-two  v-if="step === 2"></reg-form-two>
         <reg-form-three v-if="step === 3"></reg-form-three> -->
       </div>

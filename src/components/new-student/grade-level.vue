@@ -65,17 +65,17 @@
         <div class="form-row mb-3">
             <div class="form-group col-12 col-md-6">
                 <label>Strand</label>
-                {{ strandLists }}
                 <select  class="form-control shadow bg-white rounded" v-model="student.strand">
                     <!-- <option selected>Choose...</option> -->
-                    <option v-for="item in strandLists" :key="item.id">{{ item.strandName }}</option>
+                    <option v-for="item in strandLists" :key="item.strandId">{{ item.strandName }}</option>
                 </select>
             </div>
             <div class="form-group col-12 col-md-6">
                 <label>Grade Level</label>
                 <select  class="form-control shadow bg-white rounded" v-model="student.gradeLevel">
                     <option selected>Choose...</option>
-                    <option>...</option>
+                    <option value="grade11">Grade 11</option>
+                    <option value="grade12">Grade 12</option>
                 </select>
             </div>
         </div>
