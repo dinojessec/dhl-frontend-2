@@ -65,9 +65,10 @@
         <div class="form-row mb-3">
             <div class="form-group col-12 col-md-6">
                 <label>Strand</label>
+                {{ strandLists }}
                 <select  class="form-control shadow bg-white rounded" v-model="student.strand">
-                    <option selected>Choose...</option>
-                    <option>...</option>
+                    <!-- <option selected>Choose...</option> -->
+                    <option v-for="item in strandLists" :key="item.id">{{ item.strandName }}</option>
                 </select>
             </div>
             <div class="form-group col-12 col-md-6">
@@ -99,6 +100,7 @@
 <script>
 export default {
     name: 'grade-level',
+    props: ['strandLists'],
     data() {
         return {
             student: {
@@ -132,9 +134,9 @@ export default {
             this.student.username = username.replace(/\s/g, '').toLowerCase();
         }
         },
-    }
+    },
 
-}
+};
 </script>
 
 <style lang="scss" scoped>
