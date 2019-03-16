@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    {{ strandLists }}
     <div class="row">
       <div class="col shadow p-3 mb-5 bg-white rounded-pill">
         <grade-level v-bind:strandLists="strandLists"></grade-level>
@@ -57,8 +56,8 @@ export default {
     };
   },
 
+  // retrieve from database
   created() {
-    console.log('created');
     axios.get('http://localhost:3000/api/v1/students')
       .then((response) => {
         this.strandLists = response.data.strandData;
