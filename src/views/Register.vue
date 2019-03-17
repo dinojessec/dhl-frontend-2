@@ -2,9 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col shadow p-3 mb-5 bg-white rounded-pill">
-        <grade-level v-bind:strandLists="strandLists"></grade-level>
-        <!-- <reg-form-two  v-if="step === 2"></reg-form-two>
-        <reg-form-three v-if="step === 3"></reg-form-three> -->
+        <grade-level v-bind:strandLists="strandLists"></grade-level> 
       </div>
     </div>
 
@@ -13,21 +11,11 @@
         <div class="row">
           <div class="col-12 col-md-6 my-1">
             <div class="d-flex flex-column flex-md-row btn-options">
-              <!-- <button
-                class="btn btn-primary"
-                @click="backStep()"
-                v-bind:disabled="isBackDisabled()"
-              >Back</button>
-              <button
-                class="btn btn-primary"
-                @click="nextStep()"
-                v-bind:disabled="isNextDisabled()"
-              >Next</button> -->
               <button
                 type="button"
                 class="btn btn-link btn-block"
                 @click="saveStudent()"
-                v-bind:disabled="isSaveDisabled()"
+                v-bind:disabled="errors.any()"
               >Save</button>
             </div>
           </div>
@@ -69,26 +57,6 @@ export default {
   },
 
   methods: {
-    // nextStep() {
-    //   if (this.step <= 4) {
-    //     this.step = this.step + 1;
-    //   }
-    // },
-
-    // backStep() {
-    //   if (this.step >= 2) {
-    //     this.step = this.step - 1;
-    //   }
-    // },
-
-    // isBackDisabled() {
-    //   return this.step === 1;
-    // },
-
-    // isNextDisabled() {
-    //   return this.step === 5;
-    // },
-
     isSaveDisabled() {
       const errorCount = this.$store.getters.getErrorCount;
       return errorCount > 0;
@@ -97,7 +65,6 @@ export default {
     saveStudent() {
       const studentData = this.$store.getters.getStudentData;
       console.log(studentData);
-      // axios.post('http://localhost:3000/register',{})
       axios
         .post('http://localhost:3000/api/v1/students', studentData)
         .then((response) => {
