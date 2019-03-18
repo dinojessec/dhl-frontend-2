@@ -10,6 +10,7 @@ const store = new Vuex.Store({
     },
     formErrorCount: [],
   },
+
   mutations: {
     studentStateChange(state, student) {
       const stateRef = state;
@@ -21,6 +22,7 @@ const store = new Vuex.Store({
       stateRef.formErrorCount = errorCount;
     },
   },
+  
   getters: {
     // eslint-disable-next-line
     getErrorCount: (state) => { return state.formErrorCount; },
