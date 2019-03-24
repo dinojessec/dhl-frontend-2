@@ -24,15 +24,15 @@ const store = new Vuex.Store({
   },
 
   actions: {},
-  
+
   getters: {
     // eslint-disable-next-line
     getErrorCount: (state) => { return state.formErrorCount; },
 
-    getFormPropCount: (state) => { // @TODO: this is temporary
-      const formFields = state.student.formOne;
-      return Object.keys(formFields).length;
-    },
+    // getFormPropCount: (state) => { // @TODO: this is temporary
+    //   const formFields = state.student.formOne;
+    //   return Object.keys(formFields).length;
+    // },
 
     getStudentData: state => state.student,
   },
