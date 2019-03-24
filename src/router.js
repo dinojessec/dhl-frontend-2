@@ -37,7 +37,7 @@ export default new Router({
       component: () => import('./views/Register-success.vue'),
     },
     {
-      path: '/student/profile',
+      path: '/profile',
       name: 'profile',
       component: () =>
         import(/* webpackChunkName: "register" */ './views/Profile.vue'),
