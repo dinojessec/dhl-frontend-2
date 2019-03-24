@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="p-2 col-md-2 col-12">
-        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+        <!-- <button @click="editable = !editable">Edit Profile</button> -->
       </div>
     </div>
 
@@ -89,12 +89,19 @@ import EducationInformation from '@/components/user/education-information.vue';
 
 export default {
   name: 'StudentProfile',
+  // NOTE: define a prop that contains the value of profile get request
   components: {
     PersonalInformation,
     AddressInformation,
     ParentInformation,
     EducationInformation,
   },
+  data() {
+    return {
+      editable: false,
+    }
+  }
+
 };
 </script>
 
