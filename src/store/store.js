@@ -22,6 +22,8 @@ const store = new Vuex.Store({
       stateRef.formErrorCount = errorCount;
     },
   },
+
+  actions: {},
   
   getters: {
     // eslint-disable-next-line
